@@ -3,6 +3,7 @@ import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import styles from "./buttons.styles"
 import { ImageBackground, Image, View, TouchableOpacity, Text } from "react-native"
 import {GetIcon} from "../../Resources/icons"
+import {GetGif} from "../../Resources/getGif"
 
 export function BackButton({navigation, onPress}) {
   const arrow = `
@@ -61,6 +62,18 @@ export function ImgButton(props) {
           <Text style={styles.titleStyle}>{title}</Text>
           <Text style={styles.descriptionStyle}>{description}</Text>
         </View>
+      </Pressable>
+    </View>
+  );
+}
+
+export function GifButton(props) {
+  const {onPress, icon_name, style} = props;
+
+  return (
+    <View style={styles.img_button_div}>
+      <Pressable style={styles.img_button} onPress={onPress}>
+        <GetGif icon_name={icon_name} style={{width: '100%', height: '100%'}}/>
       </Pressable>
     </View>
   );
