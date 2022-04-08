@@ -1,7 +1,8 @@
 import { SvgXml } from "react-native-svg"
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import styles from "./buttons.styles"
-import { ImageBackground, Image } from "react-native"
+import { ImageBackground, Image, View, TouchableOpacity, Text } from "react-native"
+import { GetIcon } from "../../resources/icons"
 
 export function BackButton({navigation, onPress}) {
   const arrow = `
@@ -25,4 +26,28 @@ export function ProfileButton({navigation, onPress}) {
       <Image source={img} style={styles.perfilImg}/>
     </Pressable>
   )
+}
+
+export function TaskButton(props) {
+  const {onPress, icon_name, text, addtionalText} = props;
+
+  return (
+    <View style={{margin: 20}}>
+ 
+      <TouchableOpacity style={styles.TxtButtonStyle} onPress={onPress}>   
+         
+        <View style={{height:'100%', aspectRatio:1}}>
+          <GetIcon icon_name={icon_name}/>  
+        </View>
+
+        <View>
+          <Text style={styles.TextStyle}> {text} </Text>
+          <Text style={styles.AdditionalInfoStyle}> {addtionalText} </Text>
+        </View>
+         
+         
+      </TouchableOpacity>
+    </View>
+  )
+
 }

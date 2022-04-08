@@ -2,17 +2,44 @@ import styles from "./mainPage.styles"
 import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import Header from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
+import { TaskButton } from "../../Components/Buttons/buttons";
 
 export default function MainPage({navigation}) {
   return (
     <>
-      {/* <View style={{...styles.container}}> */}
+      <ScrollView style={styles.container}>
+
         <Header navigation={navigation}/>
+
+        <Text style={styles.subTitleStyle}> Atividades </Text>
+
         <View style={styles.mainContent}>
-          <Text>Oi</Text>
+          <TaskButton
+            onPress={navigation.navigate("Home")}
+            icon_name="opened_book"
+            text="Interpretação"
+            addtionalText="adicional"
+          />
+
+          <TaskButton
+            onPress={navigation.navigate("Home")}
+            icon_name="closed_book"
+            text="Interpretação"
+            addtionalText="adicional"
+          />
+          
+          <TaskButton
+            onPress={navigation.navigate("Home")}
+            icon_name="closed_book"
+            text="Interpretação"
+            addtionalText="adicional"
+          />
         </View>
-        <Footer navigation={navigation}/>
-      {/* </View> */}
+
+      </ScrollView>
+
+      <Footer navigation={navigation}/>
+      
     </>
   )
 }
