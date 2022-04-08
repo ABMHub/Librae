@@ -1,3 +1,6 @@
+src/Resources/mp4
+src/Resources/gifs
+
 node_modules/
 .expo/
 dist/

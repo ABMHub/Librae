@@ -1,7 +1,8 @@
 import { SvgXml } from "react-native-svg"
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import styles from "./buttons.styles"
-import { ImageBackground, Image } from "react-native"
+import { ImageBackground, Image, View, TouchableOpacity, Text } from "react-native"
+import {GetIcon} from "../../Resources/icons"
 
 export function BackButton({navigation, onPress}) {
   const arrow = `
@@ -39,4 +40,42 @@ export function CloseButton({navigation, onPress}){
       <SvgXml xml={cross} height={20} width={20} />
     </Pressable>
   )
+}
+
+export function TaskButton(props) {
+  const {onPress, icon_name, text, addtionalText} = props;
+
+  return (
+    <View style={{margin: 20}}>
+ 
+      <TouchableOpacity style={styles.TxtButtonStyle} onPress={onPress}>   
+         
+        <View style={{height:'100%', aspectRatio:1}}>
+          <GetIcon icon_name={icon_name}/>  
+        </View>
+
+        <View>
+          <Text style={styles.TextStyle}> {text} </Text>
+          <Text style={styles.AdditionalInfoStyle}> {addtionalText} </Text>
+        </View>
+         
+         
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+export function ImgButton(props) {
+  const {onPress, title, icon_name, description} = props;
+  return (
+    <View style={styles.img_button_div}>
+      <Pressable style={styles.img_button} onPress={onPress}>
+        <GetIcon height={"50%"} width={"50%"} icon_name={icon_name}/>
+        <View>
+          <Text style={styles.titleStyle}>{title}</Text>
+          <Text style={styles.descriptionStyle}>{description}</Text>
+        </View>
+      </Pressable>
+    </View>
+  );
 }
