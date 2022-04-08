@@ -26,3 +26,17 @@ export function ProfileButton({navigation, onPress}) {
     </Pressable>
   )
 }
+
+export function CloseButton({navigation, onPress}){
+  const cross = `
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 1L6 6M6 6L1 11M6 6L11 1M6 6L11 11" stroke="#1A1C24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  `
+
+  return (
+    <Pressable style={styles.closeButtonStyle} onPress={onPress}>
+      <SvgXml xml={cross} height={20} width={20} />
+    </Pressable>
+  )
+}

@@ -1,6 +1,6 @@
 import styles from "./mainPage.styles"
 import { StyleSheet, Text, View, ScrollView} from 'react-native';
-import Header from "../../Components/Header/header";
+import { Header, ExerciseHeader } from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 
 export default function MainPage({navigation}) {
