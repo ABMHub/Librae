@@ -15,7 +15,16 @@ const styles = StyleSheet.create({
     height:"100%",
     borderRadius: 15,
   },
-
+  closeButtonStyle: {
+    position: "relative",
+    bottom: 3,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    padding: 10,
+    borderRadius: 15,
+    height: 45,
+    aspectRatio: 1,
+  },
   //Task Button
   TxtButtonStyle: {
     flexDirection: 'row',
@@ -72,9 +81,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     //paddingLeft: 20 
   },
-
-  
-
 });
 
 export default styles
