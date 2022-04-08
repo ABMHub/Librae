@@ -2,7 +2,7 @@ import { SvgXml } from "react-native-svg"
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import styles from "./buttons.styles"
 import { ImageBackground, Image, View, TouchableOpacity, Text } from "react-native"
-import { GetIcon } from "../../resources/icons"
+import {GetIcon} from "../../Resources/icons"
 
 export function BackButton({navigation, onPress}) {
   const arrow = `
@@ -49,5 +49,19 @@ export function TaskButton(props) {
       </TouchableOpacity>
     </View>
   )
+}
 
+export function ImgButton(props) {
+  const {onPress, title, icon_name, description} = props;
+  return (
+    <View style={styles.img_button_div}>
+      <Pressable style={styles.img_button} onPress={onPress}>
+        <GetIcon height={"50%"} width={"50%"} icon_name={icon_name}/>
+        <View>
+          <Text style={styles.titleStyle}>{title}</Text>
+          <Text style={styles.descriptionStyle}>{description}</Text>
+        </View>
+      </Pressable>
+    </View>
+  );
 }

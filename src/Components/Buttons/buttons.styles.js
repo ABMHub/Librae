@@ -37,9 +37,43 @@ const styles = StyleSheet.create({
   AdditionalInfoStyle: {
     color: "#9DA8C3",
     fontSize: 14,
-    paddingLeft: 20
+    paddingLeft: 20  
+  },
+
+  //ImgButton
+  img_button_div: {
+    width: '50%',
+    aspectRatio: 0.90,
+    alignItems: 'center'
     
-  }
+  },
+  img_button: {
+    width: '85%',
+    aspectRatio: 0.93,
+    padding: 10,
+    marginTop: 20,
+    //alignItems: 'center',
+    justifyContent: 'flex-start',
+    borderRadius: 23,
+    elevation: 3,
+    backgroundColor: "#FFFFFF",
+    margin: 6
+  },
+
+  titleStyle: {
+    color: "#1A1C24",
+    marginRight :0,
+    fontSize: 15,
+    fontWeight: 'bold'
+  },
+  
+  descriptionStyle: {
+    color: "#9DA8C3",
+    fontSize: 14,
+    //paddingLeft: 20 
+  },
+
+  
 
 });
 
