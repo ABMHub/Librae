@@ -1,7 +1,7 @@
 import { SvgXml } from "react-native-svg"
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import styles from "./buttons.styles"
-import { ImageBackground, Image } from "react-native"
+import { ImageBackground, Image, Text, View, Alert } from "react-native"
 
 export function BackButton({navigation, onPress}) {
   const arrow = `
@@ -38,5 +38,37 @@ export function CloseButton({navigation, onPress}){
     <Pressable style={styles.closeButtonStyle} onPress={onPress}>
       <SvgXml xml={cross} height={20} width={20} />
     </Pressable>
+  )
+}
+
+export function OptionButton(navigation, onPress, parms){
+  let alternatives = ["a) ", "b) ", "c) ", "d) "]
+  let contentList = parms.content
+  let answerList = parms.answer
+  let listButton = []
+  //todo fazer com que os botoes mudem de cor ao serem selecionados
+  for(let i = 0; i < alternatives.length; i++){
+    listButton.push(
+      <View key={i} style={{marginVertical: 15}}>
+        <Pressable onPress={answerList[i] ? onPress.right : onPress.wrong}>
+          <Text style={styles.text}>
+            {alternatives[i]}{contentList[i]}
+          </Text>
+        </Pressable>
+      </View>
+    )
+  }
+
+  return listButton
+}
+
+export function ConfirmButton({navigation, onPress}){
+  //todo fazer que o botao mude de cor se vc nao estiver selecionando uma alternativa
+  return(
+    <View style={styles.contentConfirm}>
+      <Pressable style={styles.confirmButton} onPress={onPress}>
+        <Text style={styles.textSelect}> Confirmar </Text>
+      </Pressable>
+    </View>
   )
 }
