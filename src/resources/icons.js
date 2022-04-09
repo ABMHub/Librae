@@ -64,6 +64,26 @@ export function GetIcon({width, height, icon_name, style}) {
             </svg>
             `)
             break
+        case "little_green_gradient":
+            image_icon=(`
+                <svg width="163" height="50" viewBox="0 0 163 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="163" height="50" rx="16" fill="url(#paint0_linear_315_831)"/>
+                <defs>
+                <linearGradient id="paint0_linear_315_831" x1="21.4746" y1="-14.2241" x2="20.6523" y2="63.9382" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6CFF6C"/>
+                <stop offset="1" stop-color="#14BD14"/>
+                </linearGradient>
+                </defs>
+                </svg>
+            `)
+            break
+        case "little_gray_gradient":
+            image_icon=(`
+                <svg width="163" height="50" viewBox="0 0 163 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="163" height="50" rx="16" fill="#E0E6F3"/>
+                </svg>
+            `)
+            break
     }
 
     return(

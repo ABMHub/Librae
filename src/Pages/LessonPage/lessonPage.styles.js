@@ -73,10 +73,14 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: "10%",
-    paddingTop: "10%",
+    marginHorizontal: "10%",
+    marginTop: "10%",
+    height: "5%",
+  },
+  singularButton: {
+    width: "45%",
+    height: "100%"
   }
-
 });
 
 export default styles
