@@ -50,6 +50,20 @@ export function GetIcon({width, height, icon_name, style}) {
                 </svg>
             `)
             break
+
+        case "green_gradient":
+            image_icon=(`
+            <svg width="315" height="58" viewBox="0 0 315 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="315" height="58" rx="16" fill="url(#paint0_linear_293_1407)"/>
+            <defs>
+            <linearGradient id="paint0_linear_293_1407" x1="41.5" y1="-16.5" x2="40.9274" y2="74.1748" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6CFF6C"/>
+            <stop offset="1" stop-color="#14BD14"/>
+            </linearGradient>
+            </defs>
+            </svg>
+            `)
+            break
     }
 
     return(
