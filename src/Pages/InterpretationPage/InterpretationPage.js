@@ -1,9 +1,9 @@
 import { ExerciseHeader } from "../../Components/Header/header";
 import { Text, View, Image, Alert } from 'react-native'
-import styles from "./exercisePage.styles";
+import styles from "./InterpretationPage.styles";
 import { OptionButton, ConfirmButton } from "../../Components/Buttons/buttons";
 
-export function InterPage({navigation}){
+export function InterpretationPage({navigation}){
   const img = require("../../../assets/Homer.gif")
   let content = ["O céu é verde", "Fui na festa", "Pônei", "Bom dia"]
   let answer = [false, false, false, true]
