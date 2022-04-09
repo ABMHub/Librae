@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainPage from './src/Pages/MainPage/mainPage';
-import { InterpretationPage } from './src/Pages/InterpretationPage/InterpretationPage';
+import { InterpretationPage } from './src/Pages/InterpretationPage/interpretationPage';
 import LessonPage from './src/Pages/LessonPage/lessonPage';
 import Lesson from './src/Pages/LessonPage/lessonLesson';
 import TranslatePage from './src/Pages/TranslatePage/translatePage';

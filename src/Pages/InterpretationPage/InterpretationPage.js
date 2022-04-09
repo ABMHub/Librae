@@ -1,12 +1,13 @@
 import { ExerciseHeader } from "../../Components/Header/header";
 import { Text, View, Image, Alert } from 'react-native'
-import styles from "./InterpretationPage.styles";
+import styles from "./interpretationPage.styles";
 import { OptionButton, GradientButton } from "../../Components/Buttons/buttons";
 import { createQuestion } from "../../Resources/utility";
+import { GetGif } from "../../Resources/getGif";
 
 export function InterpretationPage({navigation}){
   let test = createQuestion(1)
-  const img = require("../../../assets/Homer.gif")
+  let img = test[1]
   let content = test[0]
   let answer = test[2]
   //todo fazer a pagina funcionar com as transicoes e tals
@@ -15,7 +16,7 @@ export function InterpretationPage({navigation}){
       <ExerciseHeader navigation={navigation}/>
       <View style={styles.content}>
         <View>
-          <Image source={img} style={styles.gifImg}></Image>
+          <GetGif icon_name={img} style={styles.gifImg}/>
         </View>
         <View style={styles.contentQuestion}>
           <Text style={styles.text}>Traduza para linguagem escrita</Text>
@@ -26,7 +27,9 @@ export function InterpretationPage({navigation}){
           {"right": () => Alert.alert("Resposta Correta!"), "wrong": () => Alert.alert("Resposta Errada!")}, 
           {"content": content, "answer": answer})}
       </View>
-      <GradientButton text={"Confirmar"} onPress={() => Alert.alert("Próxima questão!")}/>
+      <View style={{height: "70%"}}>    
+        <GradientButton text={"Confirmar"} onPress={() => Alert.alert("Próxima questão!")}/>
+      </View>
     </>
   )
 }

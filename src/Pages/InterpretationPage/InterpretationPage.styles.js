@@ -19,10 +19,11 @@ const styles = StyleSheet.create({
     },
     contentQuestion: {
         paddingTop: 50,
+        paddingBottom: 20,
         alignContent: "center"
     },
     contentAnswer: {
-        paddingTop: 30,
+        paddingBottom: 25,
         paddingLeft: 30,
     }
 });

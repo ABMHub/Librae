@@ -6,11 +6,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 25
   },
-  textSelect: {
-    color: 'seagreen',
-    fontSize: 20, 
-    textAlign: "center"
-  },
   backButtonStyle: {
     borderWidth: 1,
     borderColor: '#e0e0e0',
@@ -33,13 +28,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     height: 45,
     aspectRatio: 1,
-  },
-  confirmButton: {
-    backgroundColor: "#7cfc00",
-    padding: 10,
-    borderRadius: 15,
-    height: 45,
-    aspectRatio: 6,
   },
   contentConfirm: {
     alignSelf: "center",
@@ -134,7 +122,8 @@ const styles = StyleSheet.create({
     fontSize: 20, 
     color: "#12945F", 
     fontWeight: '700',
-    position: 'absolute'
+    position: 'absolute',
+    textAlign: "center"
   },
 });
 

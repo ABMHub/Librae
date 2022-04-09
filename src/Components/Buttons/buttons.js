@@ -64,17 +64,6 @@ export function OptionButton(navigation, onPress, parms){
   return listButton
 }
 
-export function ConfirmButton({navigation, onPress}){
-  //todo fazer que o botao mude de cor se vc nao estiver selecionando uma alternativa
-  return(
-    <View style={styles.contentConfirm}>
-      <Pressable style={styles.confirmButton} onPress={onPress}>
-        <Text style={styles.textSelect}> Confirmar </Text>
-      </Pressable>
-    </View>
-  )
-}
-
 export function TaskButton(props) {
   const {onPress, icon_name, text, addtionalText} = props;
 
