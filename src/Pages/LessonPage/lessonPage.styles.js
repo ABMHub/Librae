@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   gifView:{
     marginTop: 40,
-    marginHorizontal: "10%",
+    marginHorizontal: "5%",
     borderRadius: 30,
     padding: 20,
     backgroundColor: "white",
