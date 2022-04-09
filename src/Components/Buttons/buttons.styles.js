@@ -98,8 +98,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     position: 'absolute'
   },
-
-  
 });
 
 export default styles

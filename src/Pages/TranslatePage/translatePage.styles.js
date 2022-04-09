@@ -1,5 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
+
+const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
@@ -59,6 +62,50 @@ const styles = StyleSheet.create({
     padding: 10,
     flexWrap: "wrap"
   },
+
+  //Modal
+  viewWrapper: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
+  },
+  modalView: {
+      alignItems: "center",
+      justifyContent: "center",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      elevation: 5,
+      transform: [{ translateX: -(width * 0.4) }, 
+                  { translateY: -90 }],
+      height: height * 0.35,
+      width: width * 0.8,
+      backgroundColor: "#ECECF5",
+      borderRadius: 7,
+  },
+  resultStyle: {
+    width: '30%',
+    aspectRatio:1,
+    alignSelf: 'flex-end',
+    marginRight: 20,
+    marginTop: -140,
+    marginBottom:15,
+  },
+
+  img_button: {
+    width: '85%',
+    aspectRatio: 0.93,
+    padding: 10,
+    marginTop: 20,
+    //alignItems: 'center',
+    justifyContent: 'flex-start',
+    borderRadius: 23,
+    elevation: 3,
+    backgroundColor: "#FFFFFF",
+    margin: 6
+  },
+
 });
 
 export default styles
