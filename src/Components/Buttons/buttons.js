@@ -46,13 +46,13 @@ export function CloseButton({navigation, onPress}){
 export function OptionButton(navigation, onPress, parms){
   let alternatives = ["a) ", "b) ", "c) ", "d) "]
   let contentList = parms.content
-  let answerList = parms.answer
+  let answer = parms.answer
   let listButton = []
   //todo fazer com que os botoes mudem de cor ao serem selecionados
   for(let i = 0; i < alternatives.length; i++){
     listButton.push(
       <View key={i} style={{marginVertical: 15}}>
-        <Pressable onPress={answerList[i] ? onPress.right : onPress.wrong}>
+        <Pressable onPress={i == answer ? onPress.right : onPress.wrong}>
           <Text style={styles.text}>
             {alternatives[i]}{contentList[i]}
           </Text>

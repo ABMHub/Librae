@@ -41,7 +41,7 @@ export const createQuestion = (control=0) => {
     jsonItems = shuffleIndex(jsonItems)
 
     let alternatives = []
-    let answer = getRandomNum()
+    let answer = getRandomNum(jsonItems.length)
     let question
     
     for(let i = 0; i < jsonItems.length; i++){
@@ -60,6 +60,6 @@ export const createQuestion = (control=0) => {
 }
 
 export const createTheory = (numItems) => {
-    theoryQuestions = selectRandom(getJson().slice(), numItems)
+    const theoryQuestions = selectRandom(getJson().slice(), numItems)
     return shuffleIndex(theoryQuestions)
 }
