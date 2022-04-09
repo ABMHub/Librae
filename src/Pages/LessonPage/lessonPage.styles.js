@@ -49,6 +49,34 @@ const styles = StyleSheet.create({
     padding: 10,
     flexWrap: "wrap"
   },
+  questionTextView: {
+    paddingTop: 20
+  },
+  auxiliarText: {
+    color: 'gray',
+    alignSelf: "center",
+    fontSize: 30,
+  },
+  questionText: {
+    alignSelf: "center",
+    color: 'black',
+    fontSize: 40,
+  },
+  gifView:{
+    marginTop: 40,
+    marginHorizontal: "10%",
+    borderRadius: 30,
+    padding: 20,
+    backgroundColor: "white",
+    height: "35%"
+  },
+  buttons: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: "10%",
+    paddingTop: "10%",
+  }
+
 });
 
 export default styles

@@ -21,7 +21,7 @@ export default function MainPage({navigation}) {
           />
 
           <TaskButton
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("LessonLesson")}
             icon_name="closed_book"
             text="Interpretação"
             addtionalText="adicional"
