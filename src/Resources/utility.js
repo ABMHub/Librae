@@ -22,18 +22,18 @@ export const shuffleIndex = (array) => {
 }
 
 export const selectRandom = (array, stopIdx=4) => {
-    let ranNums = [], i = array.length, j = 0
+    let ranItems = [], i = array.length, j = 0
 
     while(i--){
         j = Math.floor(Math.random() * (i+1))
-        ranNums.push(array[j])
+        ranItems.push(array[j])
         array.splice(j, 1)
 
-        if(ranNums.length == stopIdx)
+        if(ranItems.length == stopIdx)
             break
     }
 
-    return ranNums
+    return ranItems
 }
 
 export const createQuestion = (control=0) => {
@@ -57,4 +57,9 @@ export const createQuestion = (control=0) => {
         question = jsonItems[answer]['Texto']
 
     return [alternatives, question, answer] 
+}
+
+export const createTheory = (numItems) => {
+    theoryQuestions = selectRandom(getJson().slice(), numItems)
+    return shuffleIndex(theoryQuestions)
 }
