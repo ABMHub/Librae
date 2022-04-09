@@ -78,3 +78,15 @@ export function GifButton(props) {
     </View>
   );
 }
+
+export function GradientButton(props) {
+  const {text, onPress} = props
+  return (
+    <View style={styles.ConfirmButtonContainer}>
+      <Pressable style={styles.ConfirmButton} onPress={onPress}>
+        <GetIcon icon_name={'green_gradient'}/>
+        <Text style={styles.TextConfirm}> {text} </Text>
+      </Pressable>
+    </View>
+  );
+}

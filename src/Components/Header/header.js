@@ -18,7 +18,7 @@ export default function Header({ navigation }) {
       break
   }
   return (
-    <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.35)}}>
+    <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.15)}}>
       <SafeAreaView>
         <View style={styles.content}>
           <BackButton navigation={navigation} onPress={() => Alert.alert("Botao back apertado")} />

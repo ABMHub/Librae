@@ -38,13 +38,23 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 
+  //Translate page text
+  TaskStyle: {
+    color: "#9DA8C3",
+    marginTop : 4,
+    fontSize: 30,
+    alignSelf: 'center'
+  },
+
+  QuestionStyle: {
+    color: "#1A1C24",
+    marginTop : 4,
+    fontSize: 30,
+    alignSelf: 'center'
+  },
+
   //Button Grid
   button_grid: {
-    // backgroundColor: "black",
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // display: 'flex',
-    //width: "100%",
     flexDirection: 'row',
     padding: 10,
     flexWrap: "wrap"

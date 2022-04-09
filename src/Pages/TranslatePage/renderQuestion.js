@@ -3,9 +3,11 @@ import styles from "./translatePage.styles"
 import { GifButton } from "../../Components/Buttons/buttons"
 import { StyleSheet, Text, View, ScrollView} from 'react-native';
 
-export function RenderButton(alternatives=["Homer", "Homer", "Homer", "Homer"], navigation) {
+export function RenderQuestion(question="Bom Dia", alternatives=["Homer", "Homer", "Homer", "Homer"], navigation) {
     return (
         <>
+        <Text style={styles.QuestionStyle}> {question} </Text>
+
         <View style={styles.button_grid}>
             <GifButton
                 onPress={() => navigation.navigate("Home")}
