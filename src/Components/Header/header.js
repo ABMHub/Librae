@@ -35,11 +35,17 @@ export function ExerciseHeader({navigation}){
   const current = useRoute().name
   let page_name
   switch(current) {
-    case "Conversa":
-      page_name = "Conversa"
+    case "Translate":
+      page_name = "Tradução"
+      break
+    case "Interpretation":
+      page_name = "Interpretação"
+      break
+    case "LessonLesson":
+      page_name = "Lição"
       break
     default:
-      page_name = "Interpretação"
+      page_name = "Configure na Header"
       break
   }
   //todo arrumar o alinhamento do titulo da Header dos exercicios, nao esta dinamico
@@ -48,7 +54,8 @@ export function ExerciseHeader({navigation}){
       <SafeAreaView>
         <View style={styles.contentExercise}>
           <CloseButton navigation={navigation} onPress={() => navigation.navigate("Home")}/>
-          <View style={{paddingRight: "25%"}}><Text style={styles.text}>{page_name}</Text></View>
+          <View style={{paddingRight: "15%"}}><Text style={styles.text}>{page_name}</Text></View>
+          <View></View>
         </View>
       </SafeAreaView>
       <StatusBar style="auto" />
