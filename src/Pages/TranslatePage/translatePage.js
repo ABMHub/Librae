@@ -1,6 +1,6 @@
 import styles from './translatePage.styles';
 import { StyleSheet, Text, View, ScrollView} from 'react-native';
-import Header from "../../Components/Header/header";
+import { Header, ExerciseHeader } from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 import {GradientButton} from "../../Components/Buttons/buttons";
 import { RenderQuestion} from './renderQuestion';
@@ -19,7 +19,7 @@ export default function TranslatePage({alternatives, question, answer, navigatio
   answer = 0
   return (
         <>
-          <Header navigation={navigation}/>
+          <ExerciseHeader navigation={navigation}/>
           <ScrollView style={styles.container}>
             <Text style={styles.TaskStyle}> Escrita para Libras </Text>
             <View>{RenderQuestion(question, alternatives, navigation)}</View>

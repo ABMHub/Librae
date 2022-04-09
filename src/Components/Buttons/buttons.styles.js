@@ -109,6 +109,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center'  
   },
+  LittleConfirmButtonContainer: {
+    width: '100%',
+    height: "100%",
+    // margin: 1000
+    // height: '1%',
+    aspectRatio: 5.1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center'  
+  },
 
   ConfirmButton: {
     width: '90%',
@@ -116,7 +126,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 23,
-    elevation: 1,
+    // elevation: 1,
     paddingBottom: 5,
   },
 

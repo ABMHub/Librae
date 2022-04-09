@@ -14,11 +14,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
-        <Stack.Screen name="Home" component={InterpretationPage} />
-        {/* <Stack.Screen name="Home" component={MainPage} /> */}
+        <Stack.Screen name="Home" component={MainPage} />
         <Stack.Screen name="Lesson" component={LessonPage} />
         <Stack.Screen name="LessonLesson" component={Lesson} />
         <Stack.Screen name="Translate" component={TranslatePage} />
+        <Stack.Screen name="Interpretation" component={InterpretationPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

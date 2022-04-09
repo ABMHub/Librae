@@ -4,6 +4,7 @@ import { ExerciseHeader } from "../../Components/Header/header"
 import styles from "./lessonPage.styles"
 import { TextOnlyButton } from "../../Components/Buttons/buttons"
 import { Alert } from "react-native"
+import { LittleGradientButton } from "../../Components/Buttons/buttons"
 
 /** 
  * @param {[string]} alternatives Lista de strings com os nomes dos gifs das alternativas 
@@ -29,10 +30,10 @@ export default function Lesson({navigation}) {
           </View>
           <View style={styles.buttons}>
             <View style={styles.singularButton}>
-              <Button onPress={() => Alert.alert("Butao apertado")} title={"Voltar"} lit={false}/>
+              <LittleGradientButton onPress={() => Alert.alert("Butao apertado")} text={"Voltar"} lit={false}/>
             </View>
             <View style={styles.singularButton}>
-              <Button onPress={() => Alert.alert("Butao apertado")} title={"Avancar"} lit={true}/>
+              <LittleGradientButton onPress={() => Alert.alert("Butao apertado")} text={"Avancar"} lit={true}/>
             </View>
           </View>
         </View>

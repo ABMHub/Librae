@@ -136,3 +136,16 @@ export function GradientButton(props) {
     </View>
   );
 }
+
+export function LittleGradientButton(props) {
+  const {text, onPress, lit} = props
+  const color = lit ? "#12945F" : "#9DA8C3"
+  return (
+    <View style={styles.LittleConfirmButtonContainer}>
+      <Pressable style={styles.ConfirmButton} onPress={lit ? onPress : () => {}}>
+        <GetIcon icon_name={lit ? 'little_green_gradient' : 'little_gray_gradient'}/>
+        <Text style={{...styles.TextConfirm, color:color}}> {text} </Text>
+      </Pressable>
+    </View>
+  );
+}
