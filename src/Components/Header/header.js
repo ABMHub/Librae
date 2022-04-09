@@ -46,7 +46,7 @@ export function ExerciseHeader({navigation}){
     <View style={{...styles.exerciseHeader, height: Math.floor(Dimensions.get('window').height * 0.15)}}>
       <SafeAreaView>
         <View style={styles.contentExercise}>
-          <CloseButton navigation={navigation} onPress={() => Alert.alert("Botao de fechar apertado")} />
+          <CloseButton navigation={navigation} onPress={() => navigation.navigate("Home")}/>
           <View style={{paddingRight: "25%"}}><Text style={styles.text}>{page_name}</Text></View>
         </View>
       </SafeAreaView>
