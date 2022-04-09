@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainPage from './src/Pages/MainPage/mainPage';
 import LessonPage from './src/Pages/LessonPage/lessonPage';
 import Lesson from './src/Pages/LessonPage/lessonLesson';
+import TranslatePage from './src/Pages/TranslatePage/translatePage';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen name="Home" component={MainPage} />
         <Stack.Screen name="Lesson" component={LessonPage} />
         <Stack.Screen name="LessonLesson" component={Lesson} />
+        <Stack.Screen name="Translate" component={TranslatePage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

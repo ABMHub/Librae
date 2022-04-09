@@ -81,6 +81,31 @@ const styles = StyleSheet.create({
     fontSize: 14,
     //paddingLeft: 20 
   },
+  ConfirmButtonContainer: {
+    width: '100%',
+    height: '13%',
+    aspectRatio: 5.1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center'  
+  },
+
+  ConfirmButton: {
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    borderRadius: 23,
+    elevation: 1,
+    paddingBottom: 5,
+  },
+
+  TextConfirm: {
+    fontSize: 20, 
+    color: "#12945F", 
+    fontWeight: '700',
+    position: 'absolute'
+  },
 });
 
 export default styles
