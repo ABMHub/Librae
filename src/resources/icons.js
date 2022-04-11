@@ -1,6 +1,6 @@
 import { SvgXml } from 'react-native-svg';
 
-export function GetIcon({width, height, icon_name, style}) {
+export function GetIcon({width, height, icon_name, style, optional}) {
     let image_icon
     switch(icon_name)
     {
@@ -168,6 +168,81 @@ export function GetIcon({width, height, icon_name, style}) {
                 <svg width="163" height="50" viewBox="0 0 163 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="163" height="50" rx="16" fill="#E0E6F3"/>
                 </svg>
+            `)
+            break
+        case "star":
+            image_icon=(`
+            <svg width="54" height="58" viewBox="0 0 54 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M36.3848 17.0262L50.8545 19.4278C52.0528 19.6204 53.0597 20.5719 53.4424 21.8747C53.825 23.1887 53.5129 24.6161 52.6469 25.5903L42.1545 37.1676L44.6316 53.7747C44.833 55.134 44.3396 56.5161 43.3327 57.3204C42.3358 58.1247 41.0167 58.2266 39.9393 57.5809L27.0101 49.8211L14.091 57.5809C13.0035 58.2266 11.6844 58.1247 10.6875 57.3204C9.69066 56.5161 9.18719 55.134 9.39865 53.7747L11.8757 37.1676L1.38136 25.5903C0.514382 24.6161 0.206257 23.1887 0.586882 21.8747C0.9665 20.5719 1.97042 19.6204 3.17775 19.4278L17.6355 17.0262L24.1202 2.0357C24.6539 0.787793 25.7816 -0.00439453 27.0101 -0.00439453C28.2486 -0.00439453 29.3764 0.787793 29.9101 2.0357L36.3848 17.0262Z" fill="` + optional + `"/>
+            </svg>
+            
+            `)
+            break
+        case "triple_star":
+            //let fill_color = ["black", "black", "black"]
+            let fill_color = []
+            if(optional == 1)
+            {
+                fill_color.push("url(#grad1)")
+                fill_color.push("#fAfAfA")
+                fill_color.push("#fAfAfA")
+            }
+            if(optional == 2)
+            {
+                fill_color.push("url(#grad2)")
+                fill_color.push("url(#grad2)")
+                fill_color.push("#fAfAfA")
+            }
+                
+            if(optional == 3)
+            {
+                fill_color.push("url(#grad3)")
+                fill_color.push("url(#grad3)")
+                fill_color.push("url(#grad3)")
+            }
+
+            console.log("Aq2yu")
+            console.log(fill_color)
+            image_icon=(`<svg width="165" height="73" viewBox="0 0 165 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_374_1657)">
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(246,108,30);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(214,104,42);stop-opacity:1" />
+            <stop offset="0%" style="stop-color:rgb(204,109,40);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(157,78,5);stop-opacity:1" />
+            </linearGradient>
+            
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(107,104,140);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(167,174,195);stop-opacity:1" />
+            <stop offset="0%" style="stop-color:rgb(153,178,190);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(112,138,140);stop-opacity:1" />
+            </linearGradient>
+
+            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(236,209,66);stop-opacity:1" />
+            <stop offset="30%" style="stop-color:rgb(250,234,20);stop-opacity:1" />
+            <stop offset="60%" style="stop-color:rgb(250,209,20);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(250,234,20);stop-opacity:1" />
+            </linearGradient>
+
+            <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(11,10,6);stop-opacity:1" />
+            <stop offset="30%" style="stop-color:rgb(83,78,64);stop-opacity:1" />
+            <stop offset="60%" style="stop-color:rgb(24,24,22);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(27,21,8);stop-opacity:1" />
+            </linearGradient>
+    
+            <path d="M38.3848 31.0262L52.8545 33.4278C54.0528 33.6204 55.0597 34.5719 55.4424 35.8747C55.825 37.1887 55.5129 38.6161 54.6469 39.5903L44.1545 51.1676L46.6316 67.7747C46.833 69.134 46.3396 70.5161 45.3327 71.3204C44.3358 72.1247 43.0167 72.2266 41.9393 71.5809L29.0101 63.8211L16.091 71.5809C15.0035 72.2266 13.6844 72.1247 12.6875 71.3204C11.6907 70.5161 11.1872 69.134 11.3986 67.7747L13.8757 51.1676L3.38136 39.5903C2.51438 38.6161 2.20626 37.1887 2.58688 35.8747C2.9665 34.5719 3.97042 33.6204 5.17775 33.4278L19.6355 31.0262L26.1202 16.0357C26.6539 14.7878 27.7816 13.9956 29.0101 13.9956C30.2486 13.9956 31.3764 14.7878 31.9101 16.0357L38.3848 31.0262Z" stroke="#E5E5E5" fill="` + fill_color[0] + `"/>
+            </g>
+            <path d="M146.958 31.0306L161.428 33.4322C162.627 33.6247 163.633 34.5763 164.016 35.879C164.399 37.1931 164.087 38.6205 163.221 39.5947L152.728 51.172L155.205 67.7791C155.407 69.1384 154.913 70.5205 153.906 71.3248C152.91 72.1291 151.59 72.231 150.513 71.5853L137.584 63.8255L124.665 71.5853C123.577 72.231 122.258 72.1291 121.261 71.3248C120.264 70.5205 119.761 69.1384 119.972 67.7791L122.449 51.172L111.955 39.5947C111.088 38.6205 110.78 37.1931 111.161 35.879C111.54 34.5763 112.544 33.6247 113.751 33.4322L128.209 31.0306L134.694 16.0401C135.228 14.7922 136.355 14 137.584 14C138.822 14 139.95 14.7922 140.484 16.0401L146.958 31.0306Z" stroke="#E5E5E5" fill="` + fill_color[1] + `"/>
+            <path d="M93.9585 17.0306L108.428 19.4322C109.627 19.6247 110.633 20.5763 111.016 21.879C111.399 23.1931 111.087 24.6205 110.221 25.5947L99.7283 37.172L102.205 53.7791C102.407 55.1384 101.913 56.5205 100.906 57.3248C99.9095 58.1291 98.5904 58.231 97.513 57.5853L84.5838 49.8255L71.6647 57.5853C70.5772 58.231 69.2581 58.1291 68.2613 57.3248C67.2644 56.5205 66.7609 55.1384 66.9724 53.7791L69.4495 37.172L58.9551 25.5947C58.0881 24.6205 57.78 23.1931 58.1606 21.879C58.5402 20.5763 59.5442 19.6247 60.7515 19.4322L75.2092 17.0306L81.6939 2.04009C82.2276 0.792187 83.3554 0 84.5838 0C85.8224 0 86.9502 0.792187 87.4838 2.04009L93.9585 17.0306Z" stroke="#E5E5E5" fill="` + fill_color[2] + `"/>
+            <defs>
+            <clipPath id="clip0_374_1657">
+            <rect width="58" height="58" fill="white" transform="translate(0 14)"/>
+            </clipPath>
+            </defs>
+            </svg>
             `)
             break
     }

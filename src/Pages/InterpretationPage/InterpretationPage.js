@@ -57,7 +57,7 @@ export function InterpretationPage({navigation}){
       <View style={{height: "70%"}}>    
         <GradientButton
           text={"Confirmar"}
-          onPress={selected != -1 ? () => Alert.alert("Funcao para decidir se esta certo ou nao!") : () => null}
+          onPress={selected != -1 ? () => navigation.navigate("ExerciseConclusion"): () => null}
           lit={selected != -1}
         />
       </View>

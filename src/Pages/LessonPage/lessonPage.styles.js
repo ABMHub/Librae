@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     paddingTop: 20
   },
   auxiliarText: {
-    color: 'gray',
+    color: '#9DA8C3',
     alignSelf: "center",
     fontSize: 30,
   },
@@ -80,7 +80,41 @@ const styles = StyleSheet.create({
   singularButton: {
     width: "45%",
     height: "100%"
-  }
+  },
+
+  //Lesson Conclusion
+  reportView:{
+    marginTop: 40,
+    marginHorizontal: "5%",
+    borderRadius: 30,
+    padding: 20,
+    backgroundColor: "white",
+    height: "48%"
+  },
+
+  reportStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fdfdfd',
+    borderRadius: 5 ,
+    width: '100%',
+    aspectRatio: 4.5,
+    padding: 7,
+    margin: 20,
+    //justifyContent: 'space-between'
+  },
+  TextStyle: {
+    color: "#9DA8C3",
+    marginRight :0,
+    fontSize: 24,
+    marginLeft: 20
+  },
+  AdditionalInfoStyle: {
+    color: "#9DA8C3",
+    fontSize: 14,
+    marginLeft: 20  
+  },
+
 });
 
 export default styles
