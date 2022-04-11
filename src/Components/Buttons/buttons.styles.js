@@ -125,6 +125,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     textAlign: "center"
   },
+
+  
 });
 
 export default styles
