@@ -1,5 +1,5 @@
 import { ExerciseHeader } from "../../Components/Header/header";
-import { Text, View, Image, Alert } from 'react-native'
+import { Text, View, Image, Alert, ScrollView } from 'react-native'
 import styles from "./interpretationPage.styles";
 import { OptionButton, GradientButton } from "../../Components/Buttons/buttons";
 import { createQuestion } from "../../Resources/utility";
@@ -43,24 +43,26 @@ export function InterpretationPage({navigation}){
   return (
     <>
       <ExerciseHeader navigation={navigation}/>
-      <View style={styles.content}>
-        <View>
-          <GetGif icon_name={img} style={styles.gifImg}/>
+      <ScrollView>
+        <View style={styles.content}>
+          <View>
+            <GetGif icon_name={img} style={styles.gifImg}/>
+          </View>
+          <View style={styles.contentQuestion}>
+            <Text style={styles.text}>Traduza para linguagem escrita</Text>
+          </View>
         </View>
-        <View style={styles.contentQuestion}>
-          <Text style={styles.text}>Traduza para linguagem escrita</Text>
+        <View style={styles.contentAnswer}>
+            {listButton}
         </View>
-      </View>
-      <View style={styles.contentAnswer}>
-          {listButton}
-      </View>
-      <View style={{height: "70%"}}>    
-        <GradientButton
-          text={"Confirmar"}
-          onPress={selected != -1 ? () => Alert.alert("Funcao para decidir se esta certo ou nao!") : () => null}
-          lit={selected != -1}
-        />
-      </View>
+        <View style={{height: "70%"}}>    
+          <GradientButton
+            text={"Confirmar"}
+            onPress={selected != -1 ? () => Alert.alert("Funcao para decidir se esta certo ou nao!") : () => null}
+            lit={selected != -1}
+          />
+        </View>
+      </ScrollView>
     </>
   )
 }
