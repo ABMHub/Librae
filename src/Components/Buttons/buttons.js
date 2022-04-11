@@ -1,7 +1,7 @@
 import { SvgXml } from "react-native-svg"
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 import styles from "./buttons.styles"
-import { ImageBackground, Image, View, TouchableOpacity, Text } from "react-native"
+import { ImageBackground, Image, View, TouchableOpacity, Text, Alert} from "react-native"
 import {GetIcon} from "../../Resources/icons"
 import {GetGif} from "../../Resources/getGif"
 
@@ -26,6 +26,32 @@ export function ProfileButton({navigation, onPress}) {
     <Pressable style={{...styles.backButtonStyle, padding:0}} onPress={onPress}>
       <Image source={img} style={styles.perfilImg}/>
     </Pressable>
+  )
+}
+
+export function CloseButton({navigation, onPress}){
+  const cross = `
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 1L6 6M6 6L1 11M6 6L11 1M6 6L11 11" stroke="#1A1C24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  `
+
+  return (
+    <Pressable style={styles.closeButtonStyle} onPress={onPress}>
+      <SvgXml xml={cross} height={20} width={20} />
+    </Pressable>
+  )
+}
+
+export function OptionButton({onPress, text, style}){
+  return (
+    <View style={{...style, marginVertical: 10, width:"90%", paddingLeft:10, paddingVertical:3, borderRadius:20}}>
+      <Pressable onPress={onPress}>
+        <Text style={styles.text}>
+          {text}
+        </Text>
+      </Pressable>
+    </View>
   )
 }
 
@@ -80,12 +106,27 @@ export function GifButton(props) {
 }
 
 export function GradientButton(props) {
-  const {text, onPress, style} = props
+
+  const {text, onPress, lit} = props
+  const color = lit ? "#12945F" : "#9DA8C3"
   return (
     <View style={styles.ConfirmButtonContainer}>
-      <Pressable style={{...styles.ConfirmButton, style}} onPress={onPress}>
-        <GetIcon icon_name={'green_gradient'}/>
-        <Text style={styles.TextConfirm}> {text} </Text>
+      <Pressable style={styles.ConfirmButton} onPress={onPress}>
+        <GetIcon icon_name={lit ? 'green_gradient' : "gray_gradient"}/>
+        <Text style={{...styles.TextConfirm, color: color}}> {text} </Text>
+      </Pressable>
+    </View>
+  );
+}
+
+export function LittleGradientButton(props) {
+  const {text, onPress, lit} = props
+  const color = lit ? "#12945F" : "#9DA8C3"
+  return (
+    <View style={styles.LittleConfirmButtonContainer}>
+      <Pressable style={styles.ConfirmButton} onPress={lit ? onPress : () => {}}>
+        <GetIcon icon_name={lit ? 'little_green_gradient' : 'little_gray_gradient'}/>
+        <Text style={{...styles.TextConfirm, color:color}}> {text} </Text>
       </Pressable>
     </View>
   );

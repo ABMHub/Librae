@@ -8,7 +8,7 @@ export default function RenderButton(navigation) {
         <>
         <View style={styles.button_grid}>
             <ImgButton
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.navigate("LessonLesson", {"numQuestions": 3})}
                 title="Categoria 1"
                 icon_name="opened_book"
                 description="Descrição do que quer que esse troço tenha que fazer"

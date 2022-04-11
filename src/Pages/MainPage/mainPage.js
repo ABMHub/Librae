@@ -1,6 +1,6 @@
 import styles from "./mainPage.styles"
 import { StyleSheet, Text, View, ScrollView} from 'react-native';
-import Header from "../../Components/Header/header";
+import { Header, ExerciseHeader } from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 import { TaskButton } from "../../Components/Buttons/buttons";
 
@@ -28,7 +28,7 @@ export default function MainPage({navigation}) {
           />
           
           <TaskButton
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Interpretation")}
             icon_name="closed_book"
             text="Interpretação"
             addtionalText="adicional"

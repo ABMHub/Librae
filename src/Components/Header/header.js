@@ -4,9 +4,9 @@ import { Text, View, Dimensions } from 'react-native';
 import { ImageBackground, Alert } from "react-native";
 import { useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { BackButton, ProfileButton } from '../Buttons/buttons.js';
+import { BackButton, CloseButton, ProfileButton } from '../Buttons/buttons.js';
 
-export default function Header({ navigation }) {
+export function Header({ navigation }) {
   const current = useRoute().name
   let page_name
   switch(current) {
@@ -18,7 +18,7 @@ export default function Header({ navigation }) {
       break
   }
   return (
-    <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.15)}}>
+    <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.35)}}>
       <SafeAreaView>
         <View style={styles.content}>
           <BackButton navigation={navigation} onPress={() => Alert.alert("Botao back apertado")} />
@@ -27,6 +27,38 @@ export default function Header({ navigation }) {
         </View>
       <StatusBar style="auto" />
       </SafeAreaView>
+    </View>
+  );
+}
+
+export function ExerciseHeader({navigation}){
+  const current = useRoute().name
+  let page_name
+  switch(current) {
+    case "Translate":
+      page_name = "Tradução"
+      break
+    case "Interpretation":
+      page_name = "Interpretação"
+      break
+    case "LessonLesson":
+      page_name = "Lição"
+      break
+    default:
+      page_name = "Configure na Header"
+      break
+  }
+  //todo arrumar o alinhamento do titulo da Header dos exercicios, nao esta dinamico
+  return (
+    <View style={{...styles.exerciseHeader, height: Math.floor(Dimensions.get('window').height * 0.15)}}>
+      <SafeAreaView>
+        <View style={styles.contentExercise}>
+          <CloseButton navigation={navigation} onPress={() => navigation.navigate("Home")}/>
+          <View style={{paddingRight: "15%"}}><Text style={styles.text}>{page_name}</Text></View>
+          <View></View>
+        </View>
+      </SafeAreaView>
+      <StatusBar style="auto" />
     </View>
   );
 }

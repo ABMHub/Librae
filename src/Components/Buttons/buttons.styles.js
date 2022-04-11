@@ -2,6 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
+  text: {
+    color: 'black',
+    fontSize: 25
+  },
   backButtonStyle: {
     borderWidth: 1,
     borderColor: '#e0e0e0',
@@ -15,7 +19,20 @@ const styles = StyleSheet.create({
     height:"100%",
     borderRadius: 15,
   },
-
+  closeButtonStyle: {
+    position: "relative",
+    bottom: 3,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    padding: 10,
+    borderRadius: 15,
+    height: 45,
+    aspectRatio: 1,
+  },
+  contentConfirm: {
+    alignSelf: "center",
+    paddingTop: 40
+  },
   //Task Button
   TxtButtonStyle: {
     flexDirection: 'row',
@@ -72,10 +89,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     //paddingLeft: 20 
   },
-
   ConfirmButtonContainer: {
     width: '100%',
     height: '13%',
+    aspectRatio: 5.1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center'  
+  },
+  LittleConfirmButtonContainer: {
+    width: '100%',
+    height: "100%",
+    // margin: 1000
+    // height: '1%',
     aspectRatio: 5.1,
     justifyContent: 'center',
     alignSelf: 'center',
@@ -88,7 +114,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     borderRadius: 23,
-    elevation: 1,
+    // elevation: 1,
     paddingBottom: 5,
   },
 
@@ -96,7 +122,8 @@ const styles = StyleSheet.create({
     fontSize: 20, 
     color: "#12945F", 
     fontWeight: '700',
-    position: 'absolute'
+    position: 'absolute',
+    textAlign: "center"
   },
 });
 
