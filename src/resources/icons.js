@@ -53,8 +53,8 @@ export function GetIcon({width, height, icon_name, style, optional}) {
 
         case "green_gradient":
             image_icon=(`
-            <svg width="315" height="58" viewBox="0 0 315 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="315" height="58" rx="16" fill="url(#paint0_linear_293_1407)"/>
+            <svg width="1" height="1" viewBox="0 0 1 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1" height="1" rx="16" fill="url(#paint0_linear_293_1407)"/>
             <defs>
             <linearGradient id="paint0_linear_293_1407" x1="41.5" y1="-16.5" x2="40.9274" y2="74.1748" gradientUnits="userSpaceOnUse">
             <stop stop-color="#6CFF6C"/>
@@ -144,8 +144,8 @@ export function GetIcon({width, height, icon_name, style, optional}) {
             break
         case "gray_gradient":
             image_icon=(`
-            <svg width="315" height="58" viewBox="0 0 315 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="315" height="58" rx="16" fill="#E0E6F3"/>
+            <svg width="10" height="1" viewBox="0 0 10 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="10" height="1" rx="0" fill="#E0E6F3"/>
             </svg>
 
             `)

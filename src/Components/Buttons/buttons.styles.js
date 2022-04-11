@@ -89,14 +89,21 @@ const styles = StyleSheet.create({
     fontSize: 14,
     //paddingLeft: 20 
   },
+
+  cont: {
+    backgroundColor: 'black'
+  },
+
   ConfirmButtonContainer: {
     width: '100%',
-    height: '13%',
+    //height: '100%',
     aspectRatio: 5.1,
     justifyContent: 'center',
     alignSelf: 'center',
     alignItems: 'center'  
   },
+  
+
   LittleConfirmButtonContainer: {
     width: '100%',
     height: "100%",
