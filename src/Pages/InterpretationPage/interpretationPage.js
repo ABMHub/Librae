@@ -5,7 +5,7 @@ import { OptionButton, GradientButton } from "../../Components/Buttons/buttons";
 import { createQuestion, createQuestionList } from "../../Resources/utility";
 import { GetGif } from "../../Resources/getGif";
 import React, { useState, useEffect } from 'react'
-import { ModalCorrect, ModalIncorrect } from "../../Components/Modal/modal";
+import { TextModalCorrect, TextModalIncorrect } from "../../Components/Modal/modal";
 
 export function InterpretationPage({navigation}){
   const [img, setImg] = useState(null)
@@ -99,8 +99,8 @@ export function InterpretationPage({navigation}){
             lit={selected != -1}
           />
         </View>
-        <ModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1}/>
-        <ModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1}/>
+        <TextModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1}/>
+        <TextModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1}/>
       </ScrollView>
     </>
   )

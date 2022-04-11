@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
   },
 
   cont: {
-    backgroundColor: 'black'
+    //width: '100%',
+    //backgroundColor: 'black'
   },
 
   ConfirmButtonContainer: {
