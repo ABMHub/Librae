@@ -93,12 +93,10 @@ export function ImgButton(props) {
   );
 }
 
-export function GifButton(props) {
-  const {onPress, icon_name, style} = props;
-
+export function GifButton({onPress, icon_name, style}) {
   return (
     <View style={styles.img_button_div}>
-      <Pressable style={styles.img_button} onPress={onPress}>
+      <Pressable style={{...styles.img_button, ...style}} onPress={onPress}>
         <GetGif icon_name={icon_name} style={{width: '100%', height: '100%'}}/>
       </Pressable>
     </View>

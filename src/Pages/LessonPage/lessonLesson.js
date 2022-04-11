@@ -12,11 +12,11 @@ export default function Lesson({route, navigation}) {
   const [questionNumber, setQuestionNumber] = useState(1)
   const [numberOfQuestions, setNumberOfQuestions] = useState(1)
   const [questions, setQuestions] = useState(null)
-  console.log(questions)
   useEffect(() => {
     const numQuestions = route.params["numQuestions"]
+    const category = route.params["category"]
     setNumberOfQuestions(numQuestions)
-    setQuestions(createTheory(numQuestions))
+    setQuestions(createTheory(numQuestions, category))
   }, [])
   return (
     <>
@@ -29,7 +29,7 @@ export default function Lesson({route, navigation}) {
         </View>
         <View style={{height: "100%", width:"100%"}}>
           <View style={styles.gifView}>
-            <GetGif gif_image={questions != null && questions[questionNumber-1]["Gif"]} style={{alignSelf: "center"}} />
+            <GetGif icon_name={questions != null && questions[questionNumber-1]["Gif"]} style={{alignSelf: "center"}} />
           </View>
           <View style={styles.buttons}>
             <View style={styles.singularButton}>

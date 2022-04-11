@@ -5,14 +5,15 @@ import styles from "./conclusion.styles"
 import { GetIcon } from "../../Resources/icons"
 
 /** 
- * @param {int} number Número de questões acertadas
+ * @param {route} route Seguindo a estrurura de "{"n_correct": correctAnswers}"
  * @param {navigation} navigation
  * @returns A tela a ser renderizada
  */
 
-export default function ExerciseConclusion({number=2, navigation}) {
+export default function ExerciseConclusion({route, navigation}) {
   const img = require("../../../assets/gesture.png")
   //let number = 0
+  const number = route.params["n_correct"]
   let result = "Continue tentando!"
   
   if(number >= 2)

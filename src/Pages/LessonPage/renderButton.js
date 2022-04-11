@@ -8,29 +8,29 @@ export default function RenderButton(navigation) {
         <>
         <View style={styles.button_grid}>
             <ImgButton
-                onPress={() => navigation.navigate("LessonLesson", {"numQuestions": 3})}
-                title="Categoria 1"
+                onPress={() => navigation.navigate("LessonLesson", {"numQuestions": 3, "category": "Casa"})}
+                title="Casa"
                 icon_name="opened_book"
                 description="Descrição do que quer que esse troço tenha que fazer"
             />
 
             <ImgButton
-                onPress={() => navigation.navigate("Home")}
-                title="Categoria 2"
+                onPress={() => navigation.navigate("LessonLesson", {"numQuestions": 3, "category": "Esporte"})}
+                title="Esporte"
                 icon_name="opened_book"
                 description="Descrição do que quer que esse troço tenha que fazer"
             />
 
             <ImgButton
-                onPress={() => navigation.navigate("Home")}
-                title="Categoria 3"
+                onPress={() => navigation.navigate("LessonLesson", {"numQuestions": 3, "category": "Natureza"})}
+                title="Natureza"
                 icon_name="opened_book"
                 description="Descrição do que quer que esse troço tenha que fazer"
             />
 
             <ImgButton
-                onPress={() => navigation.navigate("Home")}
-                title="Categoria 4"
+                onPress={() => navigation.navigate("LessonLesson", {"numQuestions": 3, "category": "Vestuario"})}
+                title="Vestuário"
                 icon_name="opened_book"
                 description="Descrição do que quer que esse troço tenha que fazer"
             />

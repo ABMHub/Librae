@@ -64,7 +64,7 @@ export default function LessonConclusion({navigation}) {
 
           </View>
           <View style={styles.buttons}>
-            <GradientButton onPress={() => navigation.navigate("LessonPage")} text={"Concluir"} lit={true}/>
+            <GradientButton onPress={() => navigation.navigate("Lesson")} text={"Concluir"} lit={true}/>
           </View>
         </View>
       </View>
