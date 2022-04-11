@@ -34,10 +34,10 @@ export function InterpretationPage({navigation}){
   },[fetched, selected])
 
   useEffect(() => {
-    const test = createQuestion(1)
-    setContent(test[0])
-    setImg(test[1])
-    setAnswer(test[2])
+    const exerciese = createQuestion(1)
+    setContent(exerciese[0])
+    setImg(exerciese[1])
+    setAnswer(exerciese[2])
     setFetched(true)
   }, [])
   return (
