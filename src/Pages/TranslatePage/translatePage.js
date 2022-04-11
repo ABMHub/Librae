@@ -22,17 +22,17 @@ export default function TranslatePage({alternatives, navigation}) {
   //let {alternatives, question, answer, navigation} = props
 
    // This is to manage Modal State
-   const [img, setImg] = useState(null)
-   const [content, setContent] = useState(null)
-   const [answer, setAnswer] = useState(null)
-   const [fetched, setFetched] = useState(false)
-   const [selected, setSelected] = useState(-1)
-   const [listButton, setListButton] = useState([])
-   const [questionList, setQuestionList] = useState([])
-    const [currentQuestion, setCurrentQuestion] = useState(-1)
-    const [isModalCorrect, setModalCorrect] = useState(0);
-    const [isModalIncorrect, setModalIncorrect] = useState(0);
-    const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [img, setImg] = useState(null)
+  const [content, setContent] = useState({})
+  const [answer, setAnswer] = useState(null)
+  const [fetched, setFetched] = useState(false)
+  const [selected, setSelected] = useState(-1)
+  const [listButton, setListButton] = useState([])
+  const [questionList, setQuestionList] = useState([])
+  const [currentQuestion, setCurrentQuestion] = useState(-1)
+  const [isModalCorrect, setModalCorrect] = useState(0);
+  const [isModalIncorrect, setModalIncorrect] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
  
    // Create toggleModalVisibility function that will
    // Open and close modal upon button clicks.
@@ -91,23 +91,20 @@ export default function TranslatePage({alternatives, navigation}) {
   }, [])
 
   return (
-        <>
-          <ExerciseHeader navigation={navigation}/>
-          <ScrollView style={styles.container}>
-            <Text style={styles.TaskStyle}> Escrita para Libras </Text>
-            <Text style={styles.QuestionStyle}> {img} </Text>
-            <View style={styles.button_grid}>
-              {listButton}
-            </View>
-            <GradientButton text={"Confirmar"} onPress={answer == selected ? toggleModalCorrect : toggleModalIncorrect} lit={selected != -1}/>     
-            
-            <ModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1}/>
-            <ModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1}/>
-          
-          
-          
-          </ScrollView>
-      
+    <>
+      <ExerciseHeader navigation={navigation}/>
+      <ScrollView style={styles.container}>
+        <Text style={styles.TaskStyle}> Escrita para Libras </Text>
+        <Text style={styles.QuestionStyle}> {img} </Text>
+        <View style={styles.button_grid}>
+          {listButton}
+        </View>
+        <GradientButton text={"Confirmar"} onPress={answer == selected ? toggleModalCorrect : toggleModalIncorrect} lit={selected != -1}/>     
+        
+        <ModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1} content={{"answer": content[answer], "selected": content[selected]}}/>
+        <ModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1} content={{"answer": content[answer], "selected": content[selected]}}/>
+    
+      </ScrollView>
     </>
   )
 }

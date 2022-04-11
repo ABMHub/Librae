@@ -9,7 +9,7 @@ import { TextModalCorrect, TextModalIncorrect } from "../../Components/Modal/mod
 
 export function InterpretationPage({navigation}){
   const [img, setImg] = useState(null)
-  const [content, setContent] = useState(null)
+  const [content, setContent] = useState({})
   const [answer, setAnswer] = useState(null)
   const [fetched, setFetched] = useState(false)
   const [selected, setSelected] = useState(-1)
@@ -99,8 +99,8 @@ export function InterpretationPage({navigation}){
             lit={selected != -1}
           />
         </View>
-        <TextModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1}/>
-        <TextModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1}/>
+        <TextModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1} content={{"answer": content[answer], "selected": content[selected]}}/>
+        <TextModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1} content={{"answer": content[answer], "selected": content[selected]}}/>
       </ScrollView>
     </>
   )
