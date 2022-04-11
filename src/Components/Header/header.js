@@ -21,7 +21,7 @@ export function Header({ navigation }) {
     <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.35)}}>
       <SafeAreaView>
         <View style={styles.content}>
-          <BackButton navigation={navigation} onPress={() => Alert.alert("Botao back apertado")} />
+          <BackButton navigation={navigation} onPress={() => navigation.goBack()} />
           <View><Text style={styles.text}>{page_name}</Text></View>        
           <ProfileButton navigation={navigation} onPress={() => Alert.alert("Botao perfil apertado")} />
         </View>
