@@ -6,7 +6,7 @@ import {GradientButton} from "../../Components/Buttons/buttons";
 import { RenderQuestion} from './renderQuestion';
 import React, {useState} from "react";
 import { GetIcon } from '../../Resources/icons';
-import { ModalCorrect, ModalIncorrect } from '../../Components/Modal/modal';
+import { TextModalCorrect, TextModalIncorrect, ModalCorrect, ModalIncorrect } from '../../Components/Modal/modal';
 
 
 /** 
@@ -41,7 +41,7 @@ export default function TranslatePage({alternatives, question, answer, navigatio
             <View>{RenderQuestion(question, alternatives, navigation)}</View>
             <GradientButton text={"Confirmar"} onPress={toggleModalVisibility}/>     
             
-            <ModalIncorrect toggleModalVisibility={toggleModalVisibility} isModalVisible={isModalVisible}/>
+            <TextModalCorrect toggleModalVisibility={toggleModalVisibility} isModalVisible={isModalVisible}/>
           
           
           
