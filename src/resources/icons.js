@@ -181,6 +181,12 @@ export function GetIcon({width, height, icon_name, style, optional}) {
         case "triple_star":
             //let fill_color = ["black", "black", "black"]
             let fill_color = []
+            if(optional == 0)
+            {
+                fill_color.push("#fAfAfA")
+                fill_color.push("#fAfAfA")
+                fill_color.push("#fAfAfA")
+            }
             if(optional == 1)
             {
                 fill_color.push("url(#grad1)")
