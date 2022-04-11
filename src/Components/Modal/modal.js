@@ -5,6 +5,7 @@ import { GetIcon } from '../../Resources/icons';
 import { GetGif } from '../../Resources/getGif';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import {GradientButton} from "../Buttons/buttons"
+import { getGifText } from "../../Resources/utility";
 
 export function ModalCorrect (props) {
     const {toggleModalVisibility, isModalVisible, content} = props;
@@ -28,7 +29,7 @@ export function ModalCorrect (props) {
                     </View>
                     
                     <View style={styles.textStyle}>    
-                        <Text style={styles.textStyle}> {content.answer} </Text>
+                        <Text style={styles.textStyle}> {getGifText(content.answer)} </Text>
                     </View>
 
                     <View style={{...styles.correct_img_button_div, marginBottom: 40}}>
@@ -167,7 +168,7 @@ export function ModalIncorrect (props) {
                             </View> 
                             
                             <View style={{justifyContent: 'space-around'}}>
-                                <Text style={{...styles.incorrectTextStyle, paddingRight: 47}}> {content.selected} </Text>
+                                <Text style={{...styles.incorrectTextStyle, paddingRight: 47}}> {getGifText(content.selected)} </Text>
                             </View>
                         </View>
 
@@ -177,7 +178,7 @@ export function ModalIncorrect (props) {
 
                         <View style={{...styles.incorrect_img_button_div, marginBottom: 30}}>
                             <View style={{justifyContent: 'space-around'}}>
-                                <Text style={{...styles.textStyle, paddingLeft: 47, fontSize: 20}}> {content.answer} </Text>
+                                <Text style={{...styles.textStyle, paddingLeft: 47, fontSize: 20}}> {getGifText(content.answer)} </Text>
                             </View>
                             
                             <View style={{...styles.incorrect_img_button, backgroundColor: '#2EE011'}}>
