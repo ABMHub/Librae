@@ -106,10 +106,11 @@ export function GifButton(props) {
 }
 
 export function GradientButton(props) {
-  const {text, onPress, lit} = props
+
+  const {text, onPress, lit, style} = props
   const color = lit ? "#12945F" : "#9DA8C3"
   return (
-    <View style={styles.ConfirmButtonContainer}>
+    <View style={{...styles.ConfirmButtonContainer, ...style}}>
       <Pressable style={styles.ConfirmButton} onPress={onPress}>
         <GetIcon icon_name={lit ? 'green_gradient' : "gray_gradient"}/>
         <Text style={{...styles.TextConfirm, color: color}}> {text} </Text>

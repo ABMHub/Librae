@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.4)",
   },
   modalView: {
-      //alignItems: "center",
       justifyContent: "center",
       position: "absolute",
       top: "50%",
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     aspectRatio: 4.5,
     padding: 10,
     justifyContent: 'space-between',
-    marginTop: -130,
+    marginTop: -70,
   },
 
   resultStyle: {
@@ -140,6 +139,36 @@ const styles = StyleSheet.create({
     transform: [{ translateX: -(width * 0.4) }, 
                 { translateY: -250 }],
     height: height * 0.7,
+    width: width * 0.8,
+    backgroundColor: "#ECECF5",
+    borderRadius: 20,
+  },
+
+  //Text Modal
+  textModalView: {
+    //alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    elevation: 5,
+    transform: [{ translateX: -(width * 0.4) }, 
+                { translateY: -110 }],
+    height: height * 0.35,
+    width: width * 0.8,
+    backgroundColor: "#ECECF5",
+    borderRadius: 20,
+  },
+
+  incorrectTextModalView: {
+    justifyContent: "center",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    elevation: 5,
+    transform: [{ translateX: -(width * 0.4) }, 
+                { translateY: -160 }],
+    height: height * 0.55,
     width: width * 0.8,
     backgroundColor: "#ECECF5",
     borderRadius: 20,
