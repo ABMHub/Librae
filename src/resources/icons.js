@@ -64,6 +64,14 @@ export function GetIcon({width, height, icon_name, style}) {
             </svg>
             `)
             break
+        case "gray_gradient":
+            image_icon=(`
+            <svg width="315" height="58" viewBox="0 0 315 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="315" height="58" rx="16" fill="#E0E6F3"/>
+            </svg>
+
+            `)
+            break
         case "little_green_gradient":
             image_icon=(`
                 <svg width="163" height="50" viewBox="0 0 163 50" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -43,25 +43,16 @@ export function CloseButton({navigation, onPress}){
   )
 }
 
-export function OptionButton(navigation, onPress, parms){
-  let alternatives = ["a) ", "b) ", "c) ", "d) "]
-  let contentList = parms.content
-  let answer = parms.answer
-  let listButton = []
-  //todo fazer com que os botoes mudem de cor ao serem selecionados
-  for(let i = 0; i < alternatives.length; i++){
-    listButton.push(
-      <View key={i} style={{marginVertical: 15}}>
-        <Pressable onPress={i == answer ? onPress.right : onPress.wrong}>
-          <Text style={styles.text}>
-            {alternatives[i]}{contentList[i]}
-          </Text>
-        </Pressable>
-      </View>
-    )
-  }
-
-  return listButton
+export function OptionButton({onPress, text, style}){
+  return (
+    <View style={{...style, marginVertical: 10, width:"90%", paddingLeft:10, paddingVertical:3, borderRadius:20}}>
+      <Pressable onPress={onPress}>
+        <Text style={styles.text}>
+          {text}
+        </Text>
+      </Pressable>
+    </View>
+  )
 }
 
 export function TaskButton(props) {
@@ -115,12 +106,13 @@ export function GifButton(props) {
 }
 
 export function GradientButton(props) {
-  const {text, onPress} = props
+  const {text, onPress, lit} = props
+  const color = lit ? "#12945F" : "#9DA8C3"
   return (
     <View style={styles.ConfirmButtonContainer}>
       <Pressable style={styles.ConfirmButton} onPress={onPress}>
-        <GetIcon icon_name={'green_gradient'}/>
-        <Text style={styles.TextConfirm}> {text} </Text>
+        <GetIcon icon_name={lit ? 'green_gradient' : "gray_gradient"}/>
+        <Text style={{...styles.TextConfirm, color: color}}> {text} </Text>
       </Pressable>
     </View>
   );
