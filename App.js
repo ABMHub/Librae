@@ -9,6 +9,8 @@ import Lesson from './src/Pages/LessonPage/lessonLesson';
 import TranslatePage from './src/Pages/TranslatePage/translatePage';
 import LessonConclusion from './src/Pages/LessonPage/lessonConclusion';
 import ExerciseConclusion from './src/Pages/GenericPage/conclusion';
+import Profile from './src/Pages/Profile/profilePage';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -22,6 +24,7 @@ export default function App() {
         <Stack.Screen name="Interpretation" component={InterpretationPage} />
         <Stack.Screen name="ExerciseConclusion" component={ExerciseConclusion} />
         <Stack.Screen name="LessonConclusion" component={LessonConclusion} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
