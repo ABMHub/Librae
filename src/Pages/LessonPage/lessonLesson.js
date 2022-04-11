@@ -21,7 +21,7 @@ export default function Lesson({route, navigation}) {
   return (
     <>
       <ExerciseHeader navigation={navigation} />
-      <View>
+      <View style={styles.container}>
         <View style={styles.questionTextView}>
           <Text style={styles.auxiliarText}>Como é...</Text>
           <Text style={styles.questionText}>{questions!=null && questions[questionNumber-1]["Texto"]}</Text>

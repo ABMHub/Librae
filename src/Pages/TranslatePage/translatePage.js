@@ -8,6 +8,7 @@ import React, {useState} from "react";
 import { GetIcon } from '../../Resources/icons';
 import { ModalCorrect, ModalIncorrect } from '../../Components/Modal/modal';
 
+
 /** 
  * @param {[string]} alternatives Lista de strings com os nomes dos gifs das alternativas 
  * @param {string} question nome que o usuário deve traduzir
