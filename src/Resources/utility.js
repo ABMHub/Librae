@@ -3,6 +3,17 @@ export const getJson = () => {
     return json
 }
 
+export const getGifText = (gifName) => {
+    let json = getJson()
+
+    for(let i = 0; i < json.length; i++){
+        if(json[i]['Gif'] == gifName)
+            return json[i]['Texto']
+    }
+
+    return 'Homer'
+}
+
 export const getRandomNum = (length) => {
     return Math.floor(Math.random() * length)
 }
