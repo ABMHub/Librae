@@ -48,7 +48,7 @@ export function ExerciseHeader({navigation}){
       page_name = "Configure na Header"
       break
   }
-  //todo arrumar o alinhamento do titulo da Header dos exercicios, nao esta dinamico
+  
   return (
     <View style={{...styles.exerciseHeader, height: Math.floor(Dimensions.get('window').height * 0.15)}}>
       <SafeAreaView>

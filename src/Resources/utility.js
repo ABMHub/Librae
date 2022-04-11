@@ -59,7 +59,30 @@ export const createQuestion = (control=0) => {
     return [alternatives, question, answer] 
 }
 
-export const createTheory = (numItems) => {
-    const theoryQuestions = selectRandom(getJson().slice(), numItems)
+export const createQuestionList = (num_question, control=0) => {
+    let questionList = []
+    let usedAnswers = []
+
+    while(questionList.length != num_question){
+        let question = createQuestion(control)
+        if(!usedAnswers.includes(question[1])){
+            usedAnswers.push(question[1])
+            questionList.push(question)
+        }
+    }
+
+    return questionList
+}
+
+export const createTheory = (numItems, category) => {
+    let json = getJson().slice()
+    let questionCategory = []
+
+    for(let i = 0; i < json.length; i++){
+        if(json[i]['Categoria'] == category)
+            questionCategory.push(json[i])
+    }
+
+    const theoryQuestions = selectRandom(questionCategory, numItems)
     return shuffleIndex(theoryQuestions)
 }

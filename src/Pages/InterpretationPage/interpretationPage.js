@@ -1,5 +1,5 @@
 import { ExerciseHeader } from "../../Components/Header/header";
-import { Text, View, Image, Alert } from 'react-native'
+import { Text, View, Image, Alert, ScrollView } from 'react-native'
 import styles from "./interpretationPage.styles";
 import { OptionButton, GradientButton } from "../../Components/Buttons/buttons";
 import { createQuestion } from "../../Resources/utility";
@@ -34,33 +34,35 @@ export function InterpretationPage({navigation}){
   },[fetched, selected])
 
   useEffect(() => {
-    const test = createQuestion(1)
-    setContent(test[0])
-    setImg(test[1])
-    setAnswer(test[2])
+    const exerciese = createQuestion(1)
+    setContent(exerciese[0])
+    setImg(exerciese[1])
+    setAnswer(exerciese[2])
     setFetched(true)
   }, [])
   return (
     <>
       <ExerciseHeader navigation={navigation}/>
-      <View style={styles.content}>
-        <View>
-          <GetGif icon_name={img} style={styles.gifImg}/>
+      <ScrollView>
+        <View style={styles.content}>
+          <View>
+            <GetGif icon_name={img} style={styles.gifImg}/>
+          </View>
+          <View style={styles.contentQuestion}>
+            <Text style={styles.text}>Traduza para linguagem escrita</Text>
+          </View>
         </View>
-        <View style={styles.contentQuestion}>
-          <Text style={styles.text}>Traduza para linguagem escrita</Text>
+        <View style={styles.contentAnswer}>
+            {listButton}
         </View>
-      </View>
-      <View style={styles.contentAnswer}>
-          {listButton}
-      </View>
-      <View style={{height: "70%"}}>    
-        <GradientButton
-          text={"Confirmar"}
-          onPress={selected != -1 ? () => navigation.navigate("ExerciseConclusion"): () => null}
-          lit={selected != -1}
-        />
-      </View>
+        <View style={{height: "70%"}}>    
+          <GradientButton
+            text={"Confirmar"}
+            onPress={selected != -1 ? () => navigation.navigate("ExerciseConclusion"): () => null}
+            lit={selected != -1}
+          />
+        </View>
+      </ScrollView>
     </>
   )
 }

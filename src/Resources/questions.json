@@ -1,22 +1,202 @@
 [
     {
-        "Texto": "O céu é verde",
-        "Gif": "Homer"
+        "Categoria": "Casa",
+        "Texto": "Apartamento",
+        "Gif": "apartamento"
     },
     {
-        "Texto": "Fui na festa",
-        "Gif": "Homer"
+        "Categoria": "Casa",
+        "Texto": "Armário",
+        "Gif": "armario"
     },
     {
-        "Texto": "Pônei",
-        "Gif": "Homer"
+        "Categoria": "Casa",
+        "Texto": "Banheira",
+        "Gif": "banheira"
     },
     {
-        "Texto": "Bom dia",
-        "Gif": "Homer"
+        "Categoria": "Casa",
+        "Texto": "Beliche",
+        "Gif": "beliche"
     },
     {
-        "Texto": "Como você está?",
-        "Gif": "Homer"
+        "Categoria": "Casa",
+        "Texto": "Berço",
+        "Gif": "berco"
+    },
+    {
+        "Categoria": "Casa",
+        "Texto": "Chaminé",
+        "Gif": "chamine"
+    },
+    {
+        "Categoria": "Casa",
+        "Texto": "Cozinha",
+        "Gif": "cozinha"
+    },
+    {
+        "Categoria": "Casa",
+        "Texto": "Fogão",
+        "Gif": "fogao"
+    },
+    {
+        "Categoria": "Casa",
+        "Texto": "Lareira",
+        "Gif": "lareira"
+    },
+    {
+        "Categoria": "Casa",
+        "Texto": "Poltrona",
+        "Gif": "poltrona"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Atletismo",
+        "Gif": "atletismo"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Balé",
+        "Gif": "bale"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Basquete",
+        "Gif": "basquete"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Boliche",
+        "Gif": "boliche"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Campeão",
+        "Gif": "campeao"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Capoeira",
+        "Gif": "capoeira"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Ciclismo",
+        "Gif": "ciclismo"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Competição",
+        "Gif": "competicao"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Futivôlei",
+        "Gif": "futivolei"
+    },
+    {
+        "Categoria": "Esporte",
+        "Texto": "Jiu-jitsu",
+        "Gif": "jiu-jitsu"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Animais",
+        "Gif": "animais"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Chuva",
+        "Gif": "chuva"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Cogumelo",
+        "Gif": "cogumelo"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Duna",
+        "Gif": "duna"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Flor",
+        "Gif": "flor"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Floresta",
+        "Gif": "floresta"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Furacão",
+        "Gif": "furacao"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Ilha",
+        "Gif": "ilha"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Lago",
+        "Gif": "lago"
+    },
+    {
+        "Categoria": "Natureza",
+        "Texto": "Onda",
+        "Gif": "onda"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Anel",
+        "Gif": "anel"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Boina",
+        "Gif": "boina"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Bolsa",
+        "Gif": "bolsa"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Camiseta",
+        "Gif": "camiseta"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Capa de chuva",
+        "Gif": "capa-de-chuva"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Casaco",
+        "Gif": "casaco"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Chapéu",
+        "Gif": "chapeu"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Chinelo",
+        "Gif": "chinelo"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Short",
+        "Gif": "short"
+    },
+    {
+        "Categoria": "Vestuario",
+        "Texto": "Sunga",
+        "Gif": "sunga"
     }
 ]
