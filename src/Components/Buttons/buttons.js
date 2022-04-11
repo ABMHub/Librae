@@ -106,6 +106,7 @@ export function GifButton(props) {
 }
 
 export function GradientButton(props) {
+
   const {text, onPress, lit} = props
   const color = lit ? "#12945F" : "#9DA8C3"
   return (
