@@ -25,6 +25,26 @@ function level_define(number)
     return rank
 }
 
+/** 
+ * @param {int} number número a ser convertido em um nível
+ * @returns ranking
+ */
+function medal_define(number) 
+{
+    let medal = ''
+    
+    if (number < 9)
+        medal = "bronze_medal"
+    else if (number < 18)
+        medal = "silver_medal"
+    else if (number < 27)
+        medal = "gold_medal"
+    else if (number >= 27)
+        medal = "ultra_medal"
+    
+    return medal
+}
+
 function sliderCol(number) {
     let colors = [
         '#AEFF02',
@@ -62,9 +82,7 @@ function sliderComp(number) {
  * @param {navigation} navigation
  * @returns A tela a ser renderizada
  */
-export default function Profile({n_inter=8, n_trans=17, n_less=26, navigation}) {
-  let inter_level = ''
-  
+export default function Profile({n_inter=1, n_trans=1, n_less=1, navigation}) {
   return (
     <>
     <Header navigation={navigation} />
@@ -73,7 +91,7 @@ export default function Profile({n_inter=8, n_trans=17, n_less=26, navigation}) 
         <View style={{height: "100%", width:"100%"}}>
             <View style={styles.reportView}>
                 
-                <Text style={styles.auxiliarText}>Confira seu progresso:</Text>
+                <Text style={styles.auxiliarText}>Confira seu progresso</Text>
 
                 <View>
                     <View style={styles.TextImageStyle}>        
@@ -84,7 +102,7 @@ export default function Profile({n_inter=8, n_trans=17, n_less=26, navigation}) 
                         </View>       
 
                         <View style={{height:'100%', aspectRatio:1}}>
-                            <GetIcon icon_name={"opened_book"}/>  
+                            <GetIcon icon_name={medal_define(n_less)}/>  
                         </View>
                     
                     </View>
@@ -101,7 +119,7 @@ export default function Profile({n_inter=8, n_trans=17, n_less=26, navigation}) 
                         </View>       
 
                         <View style={{height:'100%', aspectRatio:1}}>
-                            <GetIcon icon_name={"opened_book"}/>  
+                            <GetIcon icon_name={medal_define(n_trans)}/>  
                         </View>
                     
                     </View>
@@ -120,7 +138,7 @@ export default function Profile({n_inter=8, n_trans=17, n_less=26, navigation}) 
                         </View>       
 
                         <View style={{height:'100%', aspectRatio:1}}>
-                            <GetIcon icon_name={"opened_book"}/>  
+                            <GetIcon icon_name={medal_define(n_inter)}/>  
                         </View>
                     
                     </View>

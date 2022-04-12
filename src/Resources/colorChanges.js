@@ -13,7 +13,6 @@ export function colorToArr(col) {
 }
 
 export function chColor(prob, lf, rg) {
-    let med = []
     let dc = []
     let init = colorToArr(lf)
     let fin = colorToArr(rg)
@@ -21,8 +20,7 @@ export function chColor(prob, lf, rg) {
     for(let i = 0; i < 3; i++) {
         let df = Math.floor(prob*Math.abs(init[i] - fin[i]))
         dc.push(Number(init[i] + (init[i] > fin[i] ? -df : df)))
-        med.push(dc[i].toString(16))
     }
-    let t1 = `#${med[0]}${med[1]}${med[2]}`
+    let t1 = `rgb(${dc[0]},${dc[1]},${dc[2]})`
     return t1
 }
