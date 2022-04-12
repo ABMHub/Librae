@@ -46,7 +46,7 @@ function titleToImg(info) {
     'Natureza': 'nature',
     'Vestuário': 'casaco'
   }
-  return (dc[info] === undefined?'opened_book':dc[info])
+  return (dc[info] === undefined?'loading':dc[info])
 }
 
 async function hookWraper() {
