@@ -4,7 +4,8 @@ import { ExerciseHeader } from "../../Components/Header/header"
 import styles from "./profilePage.styles"
 import { GetIcon } from "../../Resources/icons"
 import { Header } from "../../Components/Header/header"
-
+import { chColor } from "../../Resources/colorChanges"
+import Footer from "../../Components/Footer/footer"
 /** 
  * @param {int} number número a ser convertido em um nível
  * @returns ranking
@@ -12,16 +13,46 @@ import { Header } from "../../Components/Header/header"
 function level_define(number)
 {
     let rank = ''
-    if (number < 3)
+    if (number < 9)
         rank = "Iniciante"
-    else if (number < 6)
+    else if (number < 18)
         rank = "Veterano"
-    else if (number < 9)
+    else if (number < 27)
         rank = "Mestre"
-    else if (number >= 9)
+    else if (number >= 27)
         rank = "Campeão"
     
     return rank
+}
+
+function sliderCol(number) {
+    let colors = [
+        '#AEFF02',
+        '#F8E432',
+        '#FF6536',
+        '#DD4220'
+    ]
+    if(number >= 27){
+        return colors[colors.length-1] 
+    }
+
+    let prob = (number - 9*Math.floor(number/9))/9
+    return chColor(prob, colors[Math.floor(number/9)], colors[Math.ceil(number/9)])
+}
+
+function sliderComp(number) {
+    let col = sliderCol(number)
+    return (
+        <View style={{height:'5%'}}>
+            <View style={{
+                  elevation: 3,
+                  backgroundColor:col,
+                  alignSelf:'flex-start', 
+                  width:`${Math.min(number/27, 1)*100}%`,
+                  height:'100%',}}>
+            </View>
+        </View>
+    );
 }
 
 /** 
@@ -31,7 +62,7 @@ function level_define(number)
  * @param {navigation} navigation
  * @returns A tela a ser renderizada
  */
-export default function Profile({n_inter=0, n_trans=0, n_less=0, navigation}) {
+export default function Profile({n_inter=8, n_trans=17, n_less=26, navigation}) {
   let inter_level = ''
   
   return (
@@ -57,12 +88,8 @@ export default function Profile({n_inter=0, n_trans=0, n_less=0, navigation}) {
                         </View>
                     
                     </View>
-                        
-
-                    {/* COLOCAR O SLIDER NO LUGAR DESSA VIEW AQUI */}
-                    <View style={{backgroundColor: 'black', height:'1%'}}>
-                    {/*lembra de tirar o estilo dessa view */} 
-                    </View>
+                    {/* !!! SLIDER COMPONENT !!! */}
+                    {sliderComp(n_less)}
                 </View>
 
                 <View>
@@ -80,10 +107,8 @@ export default function Profile({n_inter=0, n_trans=0, n_less=0, navigation}) {
                     </View>
                         
 
-                    {/* COLOCAR O SLIDER NO LUGAR DESSA VIEW AQUI */}
-                    <View style={{backgroundColor: 'black', height:'1%'}}>
-                    {/*lembra de tirar o estilo dessa view */} 
-                    </View>
+                    {/* !!! SLIDER COMPONENT !!! */}
+                    {sliderComp(n_trans)}
                 </View>
 
                 <View>
@@ -101,20 +126,13 @@ export default function Profile({n_inter=0, n_trans=0, n_less=0, navigation}) {
                     </View>
                         
 
-                    {/* COLOCAR O SLIDER NO LUGAR DESSA VIEW AQUI */}
-                    <View style={{backgroundColor: 'black', height:'1%'}}>
-                    {/*lembra de tirar o estilo dessa view */} 
-                    </View>
+                    {/* !!! SLIDER COMPONENT !!! */}
+                    {sliderComp(n_inter)}
                 </View>
             </View>
-
-            
-            
-        
-
-            
         </View>
     </View>
+    <Footer navigation={navigation}/>
     </>
   )
 }

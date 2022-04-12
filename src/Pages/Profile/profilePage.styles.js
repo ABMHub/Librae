@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     bottom: 0
   },
   questionTextView: {
-    paddingTop: 20
+    paddingTop: 30
   },
   auxiliarText: {
     color: 'black',
@@ -17,12 +17,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   reportView:{
-    marginTop: 30,
+    marginTop: '3%',
     marginHorizontal: "5%",
     borderRadius: 30,
-    padding: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     backgroundColor: "white",
-    height: "50%"
+    height: "56%"
   },
 
   reportStyle: {
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   },
   TextStyle: {
     color: "black",
-    fontSize: 20,
+    fontSize: 18,
     // alignSelf: 'center',
     //marginTop: 30,
     // textAlign: 'center',
