@@ -5,22 +5,22 @@ import { ImageBackground, Image, View, TouchableOpacity, Text, Alert} from "reac
 import {GetIcon} from "../../Resources/icons"
 import {GetGif} from "../../Resources/getGif"
 
-export function BackButton({navigation, onPress}) {
+export function BackButton({navigation, onPress, optional='red'}) {
   const arrow = `
   <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M7 1.5L1 7L7 12.5" stroke="#1A1C24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 1.5L1 7L7 12.5" stroke="${optional}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
   `
 
   return (
-    <Pressable style={styles.backButtonStyle} onPress={onPress}>
+    <Pressable style={{...styles.backButtonStyle,borderColor:optional}} onPress={onPress}>
       <SvgXml xml={arrow} height={20} width={20} />
     </Pressable>
   )
 }
 
 export function ProfileButton({navigation, onPress}) {
-  const img = require("../../../assets/icon.png")
+  const img = require("../../../assets/parrot.png")
 
   return (
     <Pressable style={{...styles.backButtonStyle, padding:0}} onPress={onPress}>

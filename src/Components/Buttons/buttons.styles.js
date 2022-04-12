@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     fontSize: 25
   },
   backButtonStyle: {
+    marginTop: '5%', 
     borderWidth: 1,
     borderColor: '#e0e0e0',
     padding: 10,

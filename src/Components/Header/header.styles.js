@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flexDirection: 'row',
-    paddingTop: 35,
+    // paddingTop: 10,
     paddingLeft: 20,
     paddingRight: 20,
     justifyContent: "space-between"
