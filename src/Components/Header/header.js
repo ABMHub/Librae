@@ -15,7 +15,7 @@ export function Header({ navigation }) {
       page_name = "Página Inicial"
       break
     default:
-      page_name = "Configure na header"
+      page_name = "Lição"
       break
   }
 
@@ -51,6 +51,9 @@ export function ExerciseHeader({navigation}){
       page_name = "Interpretação"
       break
     case "LessonLesson":
+      page_name = "Lição"
+      break
+    case "LessonConclusion":
       page_name = "Lição"
       break
     default:
