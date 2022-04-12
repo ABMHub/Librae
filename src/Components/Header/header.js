@@ -5,6 +5,7 @@ import { ImageBackground, Alert } from "react-native";
 import { useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BackButton, CloseButton, ProfileButton } from '../Buttons/buttons.js';
+import { GetIcon } from '../../Resources/icons.js';
 
 export function Header({ navigation }) {
   const current = useRoute().name
@@ -17,16 +18,24 @@ export function Header({ navigation }) {
       page_name = "Configure na header"
       break
   }
+
+  const isHome = current == 'Home' 
+
   return (
-    <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.3)}}>
+    <View style={{...styles.header, height: Math.floor(Dimensions.get('window').height * 0.25)}}>
       <SafeAreaView>
         <View style={styles.content}>
-          <BackButton navigation={navigation} onPress={() => navigation.goBack()} />
-          <View><Text style={styles.text}>{page_name}</Text></View>        
-          <ProfileButton navigation={navigation} onPress={() => Alert.alert("Botao perfil apertado")} />
+          <BackButton optional={isHome ? 'white' : '#d0d0d0'} navigation={navigation} onPress={isHome ? null : () => navigation.goBack()} />
+          {/* <View><Text style={styles.text}>{page_name}</Text></View>         */}
+          <View style={{width:'50%'}}>  
+            <GetIcon icon_name={"logo"}/>
+          </View>
+          <ProfileButton navigation={navigation} onPress={() => navigation.navigate("Profile")} />
         </View>
       <StatusBar style="auto" />
       </SafeAreaView>
+      
+      
     </View>
   );
 }
