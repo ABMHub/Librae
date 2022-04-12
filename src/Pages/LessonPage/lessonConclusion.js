@@ -3,9 +3,24 @@ import { GradientButton } from "../../Components/Buttons/buttons"
 import { ExerciseHeader } from "../../Components/Header/header"
 import styles from "./lessonPage.styles"
 import { GetIcon } from "../../Resources/icons"
-import { useIsFocused } from "@react-navigation/native"
 import React, {useState, useEffect} from 'react'
 import { getMyRegister } from "../../Resources/asyncJson"
+
+function medal_define(stl) 
+{
+    let medal = ''
+    let stripped = stl.split(' ')[0]
+    if (stripped == 'Iniciante')
+        medal = "bronze_medal"
+    else if (stripped == 'Intermediario')
+        medal = "silver_medal"
+    else if (stripped == 'Mestre')
+        medal = "gold_medal"
+    else if (stripped == 'Campeão')
+        medal = "ultra_medal"
+    
+    return medal
+}
 
 function crSubtitle(number) {
   let res = ''
@@ -21,7 +36,7 @@ function crSubtitle(number) {
   else{
     res = 'Campeão'
   }
-  return res
+  return res + ` (${100*Math.min(1, number/10)}%)`
 }
 
 function titleToImg(info) {
@@ -59,6 +74,32 @@ async function hookWraper() {
   return [titles, subs]
 }
 
+function crInfoRows(tls, stls) {
+  let infoArr = []
+  for(let i = 0; i < 3; i++) {
+    infoArr.push(crInfoRow(tls[i],stls[i], Number(i).toString()))
+  } 
+  return infoArr
+}
+
+function crInfoRow(tl, stl, id) {
+  return (
+      <View key={id} style={styles.reportStyle}>
+        <View style={{height:'130%', aspectRatio:1}}>
+          <GetIcon icon_name={titleToImg(tl)}/>  
+        </View>
+          
+        <View>
+          <Text style={styles.TextStyle}> {tl} </Text>
+          <Text style={styles.AdditionalInfoStyle}> {stl} </Text>
+        </View>
+        <View style={{height:'90%', aspectRatio:1}}> 
+          <GetIcon icon_name={medal_define(stl)}/>
+        </View>
+      </View>
+  )
+}
+
 export default function LessonConclusion({navigation}) {
   const [subTitles, setSubTitles] = useState(['Subtitulo','Subtitulo','Subtitulo'])
   const [titles, setTitles] = useState(['Titulo','Titulo','Titulo'])
@@ -81,51 +122,7 @@ export default function LessonConclusion({navigation}) {
         <View style={{height: "100%", width:"100%"}}>
           <View style={styles.reportView}>
             <Text style={styles.auxiliarText}>Confira seu progresso:</Text>
-
-            {/* Primeiro Progresso */}
-            <View style={styles.reportStyle}>   
-          
-              <View style={{height:'130%', aspectRatio:1}}>
-                <GetIcon icon_name={titleToImg(titles[0])}/>  
-              </View>
-      
-              <View>
-                <Text style={styles.TextStyle}> {titles[0]} </Text>
-                <Text style={styles.AdditionalInfoStyle}> {subTitles[0]} </Text>
-              </View>
-  
-            </View>
-
-            {/* Segundo Progresso */}
-            <View style={styles.reportStyle}>   
-          
-              <View style={{height:'130%', aspectRatio:1}}>
-                <GetIcon icon_name={titleToImg(titles[1])}/>  
-              </View>
-      
-              <View>
-                <Text style={styles.TextStyle}> {titles[1]} </Text>
-                <Text style={styles.AdditionalInfoStyle}> {subTitles[1]} </Text>
-              </View>
-  
-            </View>
-
-            {/* Terceiro Progresso */}
-            <View style={styles.reportStyle}>   
-          
-              <View style={{height:'130%', aspectRatio:1}}>
-                <GetIcon icon_name={titleToImg(titles[2])}/>  
-              </View>
-      
-              <View>
-                <Text style={styles.TextStyle}> {titles[2]} </Text>
-                <Text style={styles.AdditionalInfoStyle}> {subTitles[2]} </Text>
-              </View>
-  
-            </View>
-
-
-
+            {crInfoRows(titles, subTitles)}
           </View>
           <View style={styles.buttons}>
             <GradientButton onPress={() => navigation.navigate("Lesson")} text={"Concluir"} lit={true}/>
