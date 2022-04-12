@@ -7,17 +7,32 @@ import { LittleGradientButton } from "../../Components/Buttons/buttons"
 import { createTheory } from "../../Resources/utility"
 import { GetGif } from "../../Resources/getGif"
 import React, { useState, useEffect } from 'react';
+import { editMyRegister } from "../../Resources/asyncJson"
 
 export default function Lesson({route, navigation}) {
-  const [questionNumber, setQuestionNumber] = useState(1)
+  const [questionNumber, setQuestionNumber] = useState(0)
   const [numberOfQuestions, setNumberOfQuestions] = useState(1)
   const [questions, setQuestions] = useState(null)
+  const [questionsViewed, setQuestionsViewed] = useState(0)
+  
+  useEffect(() => {
+    if (questionsViewed == 0) return
+    editMyRegister("n_less", 1)
+  }, [questionsViewed])
+  
+  useEffect(() => {
+    if (questionNumber == 0) return
+    if (questionNumber > questionsViewed) setQuestionsViewed(questionNumber)
+  }, [questionNumber])
+
   useEffect(() => {
     const numQuestions = route.params["numQuestions"]
     const category = route.params["category"]
     setNumberOfQuestions(numQuestions)
     setQuestions(createTheory(numQuestions, category))
+    setQuestionNumber(1)
   }, [])
+
   return (
     <>
       <ExerciseHeader navigation={navigation} />

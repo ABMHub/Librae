@@ -10,6 +10,7 @@ import { TextModalCorrect, TextModalIncorrect, ModalCorrect, ModalIncorrect } fr
 
 import { GifButton } from '../../Components/Buttons/buttons';
 import { createQuestion, createQuestionList } from '../../Resources/utility';
+import { editMyRegister } from '../../Resources/asyncJson';
 
 /** 
  * @param {[string]} alternatives Lista de strings com os nomes dos gifs das alternativas 
@@ -69,19 +70,23 @@ export default function TranslatePage({alternatives, navigation}) {
     setAnswer(exercise[2])
   }, [currentQuestion])
   
+  const questionConclusion = () => {
+    setCurrentQuestion(currentQuestion+1)
+    setModalCorrect(0)
+    setModalIncorrect(0)
+    setSelected(-1)
+  }
+
   useEffect(() => {
     if (isModalCorrect != 2) return
-    setCurrentQuestion(currentQuestion+1)
     setCorrectAnswers(correctAnswers+1)
-    setModalCorrect(0)
-    setSelected(-1)
+    questionConclusion()
+    editMyRegister("n_trans", 1)
   }, [isModalCorrect])
 
   useEffect(() => {
     if (isModalIncorrect != 2) return
-    setCurrentQuestion(currentQuestion+1)
-    setModalIncorrect(0)
-    setSelected(-1)
+    questionConclusion()
   }, [isModalIncorrect])
 
   useEffect(() =>{

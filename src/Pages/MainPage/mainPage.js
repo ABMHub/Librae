@@ -3,8 +3,10 @@ import { StyleSheet, Text, View, ScrollView} from 'react-native';
 import { Header, ExerciseHeader } from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 import { TaskButton } from "../../Components/Buttons/buttons";
+import { createMyRegister } from "../../Resources/asyncJson";
 
 export default function MainPage({navigation}) {
+  createMyRegister()
   return (
     <>
       <Header navigation={navigation}/>

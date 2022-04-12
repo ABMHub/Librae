@@ -6,6 +6,7 @@ import { createQuestion, createQuestionList } from "../../Resources/utility";
 import { GetGif } from "../../Resources/getGif";
 import React, { useState, useEffect } from 'react'
 import { TextModalCorrect, TextModalIncorrect } from "../../Components/Modal/modal";
+import { editMyRegister, createMyRegister } from "../../Resources/asyncJson";
 
 export function InterpretationPage({navigation}){
   const [img, setImg] = useState(null)
@@ -48,19 +49,23 @@ export function InterpretationPage({navigation}){
     setAnswer(exercise[2])
   }, [currentQuestion])
   
+  const questionConclusion = () => {
+    setCurrentQuestion(currentQuestion+1)
+    setModalCorrect(0)
+    setModalIncorrect(0)
+    setSelected(-1)
+  }
+
   useEffect(() => {
     if (isModalCorrect != 2) return
-    setCurrentQuestion(currentQuestion+1)
     setCorrectAnswers(correctAnswers+1)
-    setModalCorrect(0)
-    setSelected(-1)
+    questionConclusion()
+    editMyRegister("n_inter", 1)
   }, [isModalCorrect])
 
   useEffect(() => {
     if (isModalIncorrect != 2) return
-    setCurrentQuestion(currentQuestion+1)
-    setModalIncorrect(0)
-    setSelected(-1)
+    questionConclusion()
   }, [isModalIncorrect])
 
   useEffect(() =>{
