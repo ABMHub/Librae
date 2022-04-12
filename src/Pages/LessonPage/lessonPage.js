@@ -4,6 +4,9 @@ import { Header } from "../../Components/Header/header";
 import Footer from "../../Components/Footer/footer";
 import { TaskButton } from "../../Components/Buttons/buttons";
 import RenderButton from "./renderButton";
+import { useIsFocused } from "@react-navigation/native";
+import React, {useEffect} from 'react'
+import { getMyRegister, setRegister } from "../../Resources/asyncJson";
 
 export default function LessonPage({navigation}) {
   return (

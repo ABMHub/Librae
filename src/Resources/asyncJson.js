@@ -9,7 +9,7 @@ const getRegister = async (key) => {
     }
 }
 
-const setRegister = async (key, value) => {
+export const setRegister = async (key, value) => {
     try {
         const register = JSON.stringify(value)
         await AsyncStorage.setItem(key, register)
@@ -22,7 +22,8 @@ export const createMyRegister = async () => {
     try {
         let register = await getRegister("KEY")
         if(register == null){
-            let newRegister = {"n_less": 0, "n_trans": 0, "n_inter": 0}
+            let newRegister = {"n_less": 0, "n_trans": 0, "n_inter": 0, 'Casa': 0, 
+                                    'Esporte': 0, 'Natureza': 0, 'Vestuario': 0}
             await setRegister("KEY", newRegister)
         }
 
@@ -47,6 +48,18 @@ export const editMyRegister = async (parameter, value) => {
         await setRegister("KEY", register)
     } catch(e) {
         console.log("Erro ao editar o registro do usuário")
+    }
+}
+
+export const editMyRegisters = async (list, values) => {
+    try {
+        let register = await getMyRegister('KEY')
+        for(let i = 0; i < list.length; i++) {
+            register[list[i]] += values[i]
+        }
+        await setRegister('KEY', register)
+    } catch(e) {
+        console.log('Erro ao atualizar parametros no registro.')
     }
 }
 
