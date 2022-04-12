@@ -9,6 +9,7 @@ import Footer from "../../Components/Footer/footer"
 import { getMyRegister } from "./../../Resources/asyncJson"
 // import { useEffect } from "react/cjs/react.production.min"
 import React, {useState, useEffect} from 'react'
+import { useIsFocused } from "@react-navigation/native";
 
 /** 
  * @param {int} number número a ser convertido em um nível
@@ -27,6 +28,26 @@ function level_define(number)
 		rank = "Campeão"
 	
 	return rank
+}
+
+/** 
+ * @param {int} number número a ser convertido em um nível
+ * @returns ranking
+ */
+function medal_define(number) 
+{
+    let medal = ''
+    
+    if (number < 9)
+        medal = "bronze_medal"
+    else if (number < 18)
+        medal = "silver_medal"
+    else if (number < 27)
+        medal = "gold_medal"
+    else if (number >= 27)
+        medal = "ultra_medal"
+    
+    return medal
 }
 
 function sliderCol(number) {
@@ -73,6 +94,7 @@ export default function Profile({navigation}) {
 	const [interpretation, setInterpretation] = useState(0)
 	const [translate, setTranslate] = useState(0)
 	const [lessons, setLessons] = useState(0)
+	const focused = useIsFocused()
 
 	useEffect(() => {
 		getMyRegister().then((response) => {
@@ -80,7 +102,7 @@ export default function Profile({navigation}) {
 			setTranslate(response["n_trans"])
 			setLessons(response["n_less"])
 		}).catch("Deu ruim - profilePage")
-	}, [])
+	}, [focused])
   
   return (
 	<>
@@ -101,7 +123,7 @@ export default function Profile({navigation}) {
 						</View>       
 
 						<View style={{height:'100%', aspectRatio:1}}>
-							<GetIcon icon_name={"opened_book"}/>  
+							<GetIcon icon_name={medal_define(lessons)}/>   
 						</View>
 					
 					</View>
@@ -118,7 +140,7 @@ export default function Profile({navigation}) {
 						</View>       
 
 						<View style={{height:'100%', aspectRatio:1}}>
-							<GetIcon icon_name={"opened_book"}/>  
+							<GetIcon icon_name={medal_define(translate)}/>  
 						</View>
 					
 					</View>
@@ -137,7 +159,7 @@ export default function Profile({navigation}) {
 						</View>       
 
 						<View style={{height:'100%', aspectRatio:1}}>
-							<GetIcon icon_name={"opened_book"}/>  
+							<GetIcon icon_name={medal_define(interpretation)}/>  
 						</View>
 					
 					</View>

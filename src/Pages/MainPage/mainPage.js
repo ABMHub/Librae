@@ -17,23 +17,23 @@ export default function MainPage({navigation}) {
         <View style={styles.mainContent}>
           <TaskButton
             onPress={() => navigation.navigate("Lesson")}
-            icon_name="opened_book"
+            icon_name="book"
             text="Lição"
-            addtionalText="Temporário"
+            addtionalText="Aprenda sinais sobre diversos temas."
           />
 
           <TaskButton
             onPress={() => navigation.navigate("Translate")}
-            icon_name="closed_book"
-            text="Tradução"
-            addtionalText="Temporário"
+            icon_name="vocabulary"
+            text="Vocabulário"
+            addtionalText="Veja uma palavra e diga qual seu sinal."
           />
           
           <TaskButton
             onPress={() => navigation.navigate("Interpretation")}
-            icon_name="closed_book"
+            icon_name="faca_o_L"
             text="Interpretação"
-            addtionalText="adicional"
+            addtionalText="Veja um sinal e diga o que significa."
           />
         </View>
 

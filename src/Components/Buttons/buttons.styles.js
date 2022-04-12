@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fdfdfd',
     borderRadius: 5 ,
     width: '100%',
-    aspectRatio: 4.5,
+    aspectRatio: 4,
     padding: 7,
     //justifyContent: 'space-between'
   },
