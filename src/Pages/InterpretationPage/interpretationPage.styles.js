@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
     content: {
         flexDirection: 'column',
-        paddingTop: 35,
+        paddingTop: 20,
         paddingLeft: 20,
         paddingRight: 20,
         alignItems: "center"
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     contentQuestion: {
-        paddingTop: 50,
+        paddingTop: 20,
         paddingBottom: 20,
         alignContent: "center"
     },

@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
   },
   starStyle: {
     justifyContent: 'center',
-    height: "40%",
-    margin: 20,
+    width: "100%",
+    marginBottom: '45%',
   },
   buttons: {
     flexDirection: "row",
