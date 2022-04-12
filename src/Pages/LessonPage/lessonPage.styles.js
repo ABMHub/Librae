@@ -84,12 +84,12 @@ const styles = StyleSheet.create({
 
   //Lesson Conclusion
   reportView:{
-    marginTop: 40,
+    marginTop: 20,
     marginHorizontal: "5%",
     borderRadius: 30,
     padding: 20,
     backgroundColor: "white",
-    height: "48%"
+    height: "53%"
   },
 
   reportStyle: {
