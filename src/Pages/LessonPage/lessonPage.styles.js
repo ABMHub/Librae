@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   reportStyle: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between', 
     backgroundColor: '#fdfdfd',
     borderRadius: 5 ,
     width: '100%',
