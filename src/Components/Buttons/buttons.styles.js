@@ -133,7 +133,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     textAlign: "center"
   },
-
+  svg_button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   
 });
 

@@ -131,3 +131,12 @@ export function LittleGradientButton(props) {
     </View>
   );
 }
+
+export function SvgButton(props) {
+  const {onPress, svg} = props;
+  return (
+      <Pressable style={styles.svg_button} onPress={onPress}>
+        {svg}
+      </Pressable>
+  );
+}
