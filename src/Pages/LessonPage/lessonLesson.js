@@ -55,9 +55,9 @@ export default function Lesson({route, navigation}) {
           <Text style={styles.auxiliarText}>...em libras?</Text>
         </View>
         <View style={{height: "100%", width:"100%"}}>
-        <View style={{...styles.gifView, flexDirection: 'row'}}>
-            <View style={{flex:1, alignSelf: 'center'}}>
-              <GetGif icon_name={questions != null && questions[questionNumber-1]["Gif"]} style={{alignSelf: "center"}} />
+          <View style={{...styles.gifView, flexDirection: 'row'}}>
+            <View style={{flex:1,flexDirection:'column'}}>
+              <GetGif icon_name={questions != null && questions[questionNumber-1]["Gif"]} style={{flex:1, alignSelf: 'center'}} />
             </View>
           </View>
           <View style={styles.buttons}>

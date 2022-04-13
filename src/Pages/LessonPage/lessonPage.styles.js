@@ -65,8 +65,9 @@ const styles = StyleSheet.create({
   gifView:{
     marginHorizontal: "5%",
     borderRadius: 30,
-    backgroundColor: "white",
-    height: "30%"
+    //backgroundColor: "white",
+    height: "30%",
+    //paddingVertical:'5%'
   },
   buttons: {
     flexDirection: "row",
