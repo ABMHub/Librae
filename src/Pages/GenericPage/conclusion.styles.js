@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   reportView:{
-    marginTop: 40,
+    marginTop: 20,
     marginHorizontal: "5%",
     borderRadius: 30,
-    padding: 20,
+    padding: 10,
     backgroundColor: "white",
-    height: "40%"
+    height: "43%"
   },
 
   reportStyle: {

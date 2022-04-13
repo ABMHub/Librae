@@ -11,6 +11,7 @@ import { TextModalCorrect, TextModalIncorrect, ModalCorrect, ModalIncorrect } fr
 import { GifButton } from '../../Components/Buttons/buttons';
 import { createQuestion, createQuestionList } from '../../Resources/utility';
 import { editMyRegister } from '../../Resources/asyncJson';
+import { sliderComp } from '../Profile/profilePage';
 
 /** 
  * @param {[string]} alternatives Lista de strings com os nomes dos gifs das alternativas 
@@ -98,13 +99,18 @@ export default function TranslatePage({alternatives, navigation}) {
   return (
     <>
       <ExerciseHeader navigation={navigation}/>
+      
       <ScrollView style={styles.container}>
+        <Text style={{fontFamily:'monospace', alignSelf:'center',color:'#9DA8C3', marginBottom:'1%'}}>{`Progresso atual ${currentQuestion+1}/3`}</Text>
+        <View style={{height:'1%', width:'90%', marginHorizontal:'5%', marginBottom:'4%'}}>
+          {sliderComp((currentQuestion+1)*9)}
+        </View>
         <Text style={styles.TaskStyle}> Escrita para Libras </Text>
         <Text style={styles.QuestionStyle}> {img} </Text>
         <View style={styles.button_grid}>
           {listButton}
         </View>
-        <GradientButton text={"Confirmar"} onPress={answer == selected ? toggleModalCorrect : toggleModalIncorrect} lit={selected != -1}/>     
+        <GradientButton text={"Confirmar"} onPress={selected != -1 ? selected == answer ? toggleModalCorrect : toggleModalIncorrect : () => null} lit={selected != -1}/>     
         
         <ModalCorrect toggleModalVisibility={toggleModalCorrect} isModalVisible={isModalCorrect == 1} content={{"answer": content[answer], "selected": content[selected]}}/>
         <ModalIncorrect toggleModalVisibility={toggleModalIncorrect} isModalVisible={isModalIncorrect == 1} content={{"answer": content[answer], "selected": content[selected]}}/>

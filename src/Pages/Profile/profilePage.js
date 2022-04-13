@@ -65,10 +65,9 @@ function sliderCol(number) {
 	return chColor(prob, colors[Math.floor(number/9)], colors[Math.ceil(number/9)])
 }
 
-function sliderComp(number) {
+export function sliderComp(number) {
 	let col = sliderCol(number)
 	return (
-		<View style={{height:'5%'}}>
 			<View style={{
 				  elevation: 3,
 				  backgroundColor:col,
@@ -76,7 +75,6 @@ function sliderComp(number) {
 				  width:`${Math.min(number/27, 1)*100}%`,
 				  height:'100%',}}>
 			</View>
-		</View>
 	);
 }
 
@@ -128,7 +126,9 @@ export default function Profile({navigation}) {
 					
 					</View>
 					{/* !!! SLIDER COMPONENT !!! */}
-					{sliderComp(lessons)}
+					<View style={{height:'5%'}}>
+						{sliderComp(lessons)}
+					</View>
 				</View>
 
 				<View>
@@ -147,7 +147,9 @@ export default function Profile({navigation}) {
 						
 
 					{/* !!! SLIDER COMPONENT !!! */}
-					{sliderComp(translate)}
+					<View style={{height:'5%'}}>
+						{sliderComp(translate)}
+					</View>
 				</View>
 
 				<View>
@@ -166,7 +168,9 @@ export default function Profile({navigation}) {
 						
 
 					{/* !!! SLIDER COMPONENT !!! */}
-					{sliderComp(interpretation)}
+					<View style={{height:'5%'}}>
+						{sliderComp(interpretation)}
+					</View>
 				</View>
 			</View>
 		</View>

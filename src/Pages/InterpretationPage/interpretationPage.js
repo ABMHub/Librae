@@ -7,6 +7,7 @@ import { GetGif } from "../../Resources/getGif";
 import React, { useState, useEffect } from 'react'
 import { TextModalCorrect, TextModalIncorrect } from "../../Components/Modal/modal";
 import { editMyRegister, createMyRegister } from "../../Resources/asyncJson";
+import { sliderComp } from "../Profile/profilePage";
 
 export function InterpretationPage({navigation}){
   const [img, setImg] = useState(null)
@@ -86,6 +87,10 @@ export function InterpretationPage({navigation}){
     <>
       <ExerciseHeader navigation={navigation}/>
       <ScrollView>
+        <Text style={{fontFamily:'monospace', alignSelf:'center',color:'#9DA8C3', marginBottom:'1%'}}>{`Progresso atual ${currentQuestion+1}/3`}</Text>
+        <View style={{height:'1%', width:'90%', marginHorizontal:'5%'}}>
+          {sliderComp((currentQuestion+1)*9)}
+        </View>
         <View style={styles.content}>
           <View>
             <GetGif icon_name={img} style={styles.gifImg}/>

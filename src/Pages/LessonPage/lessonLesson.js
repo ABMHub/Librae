@@ -8,6 +8,7 @@ import { createTheory } from "../../Resources/utility"
 import { GetGif } from "../../Resources/getGif"
 import React, { useState, useEffect } from 'react';
 import { editMyRegister, editMyRegisters } from "../../Resources/asyncJson"
+import {sliderComp} from '../Profile/profilePage'
 
 function parse(info) {
   if(info === 'Vestuário'){
@@ -45,6 +46,10 @@ export default function Lesson({route, navigation}) {
       <ExerciseHeader navigation={navigation} />
       <View style={styles.container}>
         <View style={styles.questionTextView}>
+          <Text style={{fontFamily:'monospace', alignSelf:'center',color:'#9DA8C3', marginBottom:'1%'}}>{`Progresso atual ${questionNumber}/3`}</Text>
+          <View style={{height:'3%', width:'90%', marginHorizontal:'5%', marginBottom:'4%'}}>
+            {sliderComp(questionNumber*9)}
+          </View>
           <Text style={styles.auxiliarText}>Como é...</Text>
           <Text style={styles.questionText}>{questions!=null && questions[questionNumber-1]["Texto"]}</Text>
           <Text style={styles.auxiliarText}>...em libras?</Text>

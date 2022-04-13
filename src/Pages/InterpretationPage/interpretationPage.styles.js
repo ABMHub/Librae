@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     text: {
         color: 'black',
-        fontSize: 25
+        fontSize: 22
     },
     content: {
         flexDirection: 'column',
@@ -18,12 +18,9 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     contentQuestion: {
-        paddingTop: 20,
-        paddingBottom: 20,
         alignContent: "center"
     },
     contentAnswer: {
-        paddingBottom: 25,
         paddingLeft: 30,
     }
 });

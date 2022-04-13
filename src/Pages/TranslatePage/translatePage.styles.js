@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
   QuestionStyle: {
     color: "#1A1C24",
-    marginTop : 4,
+    marginTop : 0,
     fontSize: 30,
     alignSelf: 'center'
   },
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   button_grid: {
     flexDirection: 'row',
     padding: 10,
+    paddingTop: 0,
     flexWrap: "wrap"
   },
 

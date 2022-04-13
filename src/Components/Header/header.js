@@ -62,7 +62,7 @@ export function ExerciseHeader({navigation}){
   }
   
   return (
-    <View style={{...styles.exerciseHeader, height: Math.floor(Dimensions.get('window').height * 0.18)}}>
+    <View style={{...styles.exerciseHeader, height: Math.floor(Dimensions.get('window').height * 0.16)}}>
       <SafeAreaView>
         <View style={styles.contentExercise}>
           <CloseButton navigation={navigation} onPress={() => navigation.navigate("Home")}/>
