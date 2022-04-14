@@ -25,8 +25,8 @@ npm install -g expo-cli
 Clone o projeto em uma pasta, entre na pasta e instale as dependências:
 
 ```bash
-git clone https://github.com/ABMHub/Lubras.git
-cd Lubras
+git clone https://github.com/ABMHub/Librae.git
+cd Librae
 npm install
 ```
 
