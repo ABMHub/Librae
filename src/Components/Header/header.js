@@ -45,7 +45,7 @@ export function ExerciseHeader({navigation}){
   let page_name
   switch(current) {
     case "Translate":
-      page_name = "Tradução"
+      page_name = "Vocabulário"
       break
     case "Interpretation":
       page_name = "Interpretação"
@@ -55,6 +55,9 @@ export function ExerciseHeader({navigation}){
       break
     case "LessonConclusion":
       page_name = "Lição"
+      break
+    case "ExerciseConclusion":
+      page_name = "Resultados"
       break
     default:
       page_name = "Configure na Header"

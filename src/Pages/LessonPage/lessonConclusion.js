@@ -23,6 +23,7 @@ function medal_define(stl)
 }
 
 function crSubtitle(number) {
+  if (number == undefined) return "Iniciante (0%)"
   let res = ''
   if(number < 3){
     res = 'Iniciante'

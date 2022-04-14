@@ -135,7 +135,7 @@ export default function Profile({navigation}) {
 					<View style={styles.TextImageStyle}>        
 					
 						<View> 
-							<Text style={styles.TextStyle}> {"Traduções Realizadas"}  </Text>
+							<Text style={styles.TextStyle}> {"Vocabulário"}  </Text>
 							<Text style={styles.AdditionalInfoStyle}> {level_define(translate)}  </Text>
 						</View>       
 
@@ -156,7 +156,7 @@ export default function Profile({navigation}) {
 					<View style={styles.TextImageStyle}>        
 					
 						<View> 
-							<Text style={styles.TextStyle}> {"Interpretações Realizadas"}  </Text>
+							<Text style={styles.TextStyle}> {"Interpretação"}  </Text>
 							<Text style={styles.AdditionalInfoStyle}> {level_define(interpretation)}  </Text>
 						</View>       
 
